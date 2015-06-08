@@ -10,7 +10,7 @@
         </session-timeout>
     </session-config>-->
     
-    <filter>
+    <!--<filter>
         <filter-name>CompressingFilter</filter-name>
         <filter-class>com.github.ziplet.filter.compression.CompressingFilter</filter-class>
     </filter>
@@ -22,7 +22,7 @@
             <param-name>compressionThreshold</param-name>
             <param-value>0</param-value>
         </init-param>
-    </filter-mapping>
+    </filter-mapping>-->
     
     <filter>
         <filter-name>SparkFilter</filter-name>
