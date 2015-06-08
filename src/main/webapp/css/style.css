@@ -7,54 +7,102 @@ and open the template in the editor.
     Created on : Apr 16, 2015, 12:34:32 AM
     Author     : Bert
 */
-html {
-  background-color: beige;
-  width: 100%;
-  height: 100%; }
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 1, 2015, 10:38:32 AM
+    Author     : Patrick
+*/
+html, * {
+  margin: 0;
+  padding: 0; }
 
 body {
-  padding-top: 10px;
-  box-sizing: border-box; }
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  font-size: 14px; }
 
-.page {
-  width: 80%;
-  height: fit-content;
-  min-height: 300px;
-  background-color: white;
-  margin: auto;
-  border-radius: 25px;
-  overflow: hidden;
-  position: relative; }
-  .page .menuArea {
-    width: 20%;
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden; }
+
+div.header {
+  background: #205081;
+  padding: 12px 8px;
+  width: 100%; }
+  div.header div.logo {
+    background: url("../images/logo.png") no-repeat top left;
+    height: 40px;
+    width: 124px; }
+
+div.page {
+  height: 100%; }
+  div.page div.menu {
     float: left;
-    background-color: magenta; }
-    .page .menuArea .menu .title {
-      background-color: lightblue;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    .page .menuArea .menu .submenu {
-      background-color: white;
-      border: 1px solid black;
-      border-bottom: 0;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .page .menuArea .menu .submenu:last-child {
-        border-bottom: 1px solid black; }
-  .page .viewArea {
+    min-height: 500px;
+    width: 13.9%; }
+  div.page div.view-area {
+    background: #FFFFFF;
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
     float: left;
-    width: 80%; }
-  .page .footer {
-    width: 100%;
-    clear: both;
-    text-align: center;
-    font-size: 8px;
-    position: absolute;
-    bottom: 0;
-    left: 0; }
+    min-height: 500px;
+    padding: 28px;
+    width: 82%; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 1, 2015, 11:14:19 AM
+    Author     : Patrick
+*/
+div.menu {
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+  width: 180px; }
+  div.menu ul {
+    list-style: none; }
+    div.menu ul li {
+      cursor: pointer;
+      margin: 5px 0;
+      padding: 10px 18px; }
+      div.menu ul li a:hover {
+        text-decoration: none; }
+    div.menu ul li:hover {
+      background: #e6e6e6; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 1, 2015, 10:40:02 AM
+    Author     : Patrick
+*/
+a {
+  color: #3b73af; }
+
+a:hover {
+  color: #3572b0;
+  text-decoration: underline; }
+
+.default-action {
+  border: 1px solid #dddddd;
+  background: #3572b0;
+  border-radius: 5px;
+  color: #FFFFFF; }
+
+.default-action:hover {
+  background: #205081; }
 
 /*# sourceMappingURL=style.css.map */

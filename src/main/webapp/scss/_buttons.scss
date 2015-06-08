@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 1, 2015, 10:40:02 AM
+    Author     : Patrick
+*/
+
+a {
+    color: $light-blue-color;
+}
+
+a:hover {
+    color: $blue-color;
+    text-decoration: underline;
+}
+
+.default-action {
+    @include border;
+    background: $blue-color;
+    border-radius: 5px;
+    color: $white-color;    
+}
+
+.default-action:hover {
+    background: $dark-blue-color;
+}

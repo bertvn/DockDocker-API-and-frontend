@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html ng-app="article">
     <head>
-        <title>TODO supply a title</title>
+        <title>DockDocker</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/libs/jquery/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/libs/angular.js/angular.js"></script>
         <script type="text/javascript" src="js/libs/angular.js/angular-route.js"></script>
-        <script type="text/javascript" src="js/libs/oboe-browser.js"></script>
+        
         <script type="text/javascript" src="js/libs/angular-oboe.min.js"></script>
+        <script type="text/javascript" src="js/libs/ng-oboe.js"></script>
+        <script type="text/javascript" src="js/libs/oboe-browser.js"></script>
+        
         <script type="text/javascript" src="js/App.js"></script>
-        <script type="text/javascript" src="js/Chunked.js"></script>
+        <script type="text/javascript" src="js/Main.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body ng-controller="main">
-        <div class="page">
-            <div class="menuArea">
-                <div class="menu" ng-repeat="item in menu">
-                    <div class="title" ng-click="item.display = !item.display">{{item.titel}}</div>
-                    <div class="submenu" ng-show="item.display" ng-repeat="subitems in item.sub">
-                        <a href="{{subitems.link}}">{{subitems.subtitel}}</a>
-                    </div>
-                </div>
-            </div>
-            <div ng-view class="viewArea"></div>
-            <div class="footer">copyright spul</div>
+        
+        <div class="header">
+            <div class="logo"></div>
         </div>
+        
+        <div class="page clearfix">
+            <div class="menu">
+                <ul ng-repeat="item in menu">
+                    <li ng-click="item.display = !item.display">
+                        <a>{{item.titel}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div ng-view class="view-area"></div>
+        </div>
+        <!--<div class="footer">copyright spul</div>-->
     </body>
 </html>
