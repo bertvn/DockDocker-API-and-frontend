@@ -65,12 +65,10 @@ div.page {
     }
     
     div.view-area {
-        background: $white-color;
         border-bottom: 1px solid $border-color;
         border-left: 1px solid $border-color;
         float: left;
         min-height: 500px;
-        padding: 28px;
         width: 82%;
     }
 }

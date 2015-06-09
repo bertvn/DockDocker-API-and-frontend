@@ -1,0 +1,98 @@
+
+<div class="container-view-header">
+    
+</div>
+
+<!-- Container view -->
+<div class="container-view-holder">
+    <!-- Grid -->
+    <div class="container-grid" id="container-grid">
+        <ul>
+            <li ng-repeat="container in containers" onclick="ContainerView.containerSelected(this)">
+                <a id="{{container.Id}}">
+                    <!-- TODO: change to custom image per container (showing default) -->
+                    <img src="images/container-icon.png" />
+                    <span>{{container.Names[0]}}</span><br />
+                    <span class="summary">{{container.Status}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="container-container">
+        <div class="selected-container" id="selected-container">
+            <div class="container-title">
+                <h1>Selected container title</h1>
+            </div>
+            <div class="issue-main-column">
+                <div class="group">
+                    <div class="group-title">
+                        <span class="title">Details</span>
+                    </div>
+                    <div class="column">
+                        <span class="key">Name:</span>
+                        <span class="value">Name</span><br />
+
+                        <span class="key">Up time:</span>
+                        <span class="value">Up time</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                    <div class="column">
+                        <span class="key">Status:</span>
+                        <span class="value">Running</span><br />
+
+                        <span class="key">Memory use:</span>
+                        <span class="value">1.000.000 MB</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="issue-side-column">
+                <div class="group">
+                    <div class="group-title">
+                        <span class="title">More info</span>
+                    </div>
+                    <div class="column">
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-title">
+                        <span class="title">More info</span>
+                    </div>
+                    <div class="column">
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

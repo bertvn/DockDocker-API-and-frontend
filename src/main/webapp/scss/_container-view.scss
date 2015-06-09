@@ -1,0 +1,131 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 9, 2015, 4:17:10 PM
+    Author     : Patrick
+*/
+div.container-view-header {
+    border-bottom: 1px solid $border-color;
+    height: 40px;
+    padding: 8px;
+    width: 100%;
+}
+
+div.container-view-holder {
+    
+    div.container-grid {
+        background: $white-color;
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        float: left;
+        min-height: 644px;
+        overflow-y: scroll;
+        padding: 3px 8px 8px 8px;
+        width: 300px;
+
+        ul {
+            list-style: none;
+
+            li {
+                border-bottom: 1px solid $border-color;
+                cursor: pointer;
+                padding: 5px 0 5px 5px;
+
+                img {
+                    vertical-align: text-bottom;
+                }
+
+                span.summary {
+                    display: block;
+                    margin-top: 3px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            
+            li.selected {
+                background: $selected-color;
+            }
+        }
+    }
+    
+    div.container-container {
+        border: 1px solid $border-color;
+        border-top: none;
+        background: $white-color;
+        float: left;
+        margin:  0 0 0 -1px;
+        
+        div.selected-container {
+            padding: 20px;
+        }
+        
+        div.container-title {
+            margin: 0 0 16px 0;
+        }
+
+        div.issue-main-column,
+        div.issue-side-column {
+            display: inline-block;
+            vertical-align: top;
+
+            div.group {
+                margin: 0 0 20px 0;
+                width: inherit;
+
+                div.group-title {
+                    span.title {
+                        font-weight: bold;
+                        padding: 0 6px 0 0;
+                    }
+                }
+
+                div.column {
+                    display: inline-block;
+                    line-height: 24px;
+                    padding: 6px;
+                    vertical-align: top;
+
+                    span.key,
+                    span.value {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
+                    span.key {
+                        width: 135px;
+                    }
+
+                    span.value {
+                        width: 235px;
+
+                        img {
+                            margin: 0 4px 0 0;
+                            vertical-align: text-bottom;
+                        }
+                    }
+                }
+
+                div.column.description {
+                    p {
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+        }
+
+        div.issue-main-column {
+            width: 776px;
+        }
+
+        div.issue-side-column {
+            margin: 0 0 0 24px;
+            width: 398px;
+        }
+    }
+    
+}

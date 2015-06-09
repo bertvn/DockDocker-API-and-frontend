@@ -18,8 +18,8 @@ a:hover {
 }
 
 .default-action {
-    @include border;
     background: $blue-color;
+    border: 1px solid $border-color;
     border-radius: 5px;
     color: $white-color;    
 }

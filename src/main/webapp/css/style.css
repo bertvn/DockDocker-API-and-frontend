@@ -48,12 +48,10 @@ div.page {
     min-height: 500px;
     width: 13.9%; }
   div.page div.view-area {
-    background: #FFFFFF;
     border-bottom: 1px solid #dddddd;
     border-left: 1px solid #dddddd;
     float: left;
     min-height: 500px;
-    padding: 28px;
     width: 82%; }
 
 /*
@@ -97,12 +95,105 @@ a:hover {
   text-decoration: underline; }
 
 .default-action {
-  border: 1px solid #dddddd;
   background: #3572b0;
+  border: 1px solid #dddddd;
   border-radius: 5px;
   color: #FFFFFF; }
 
 .default-action:hover {
   background: #205081; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 9, 2015, 4:17:10 PM
+    Author     : Patrick
+*/
+div.container-view-header {
+  border-bottom: 1px solid #dddddd;
+  height: 40px;
+  padding: 8px;
+  width: 100%; }
+
+div.container-view-holder div.container-grid {
+  background: #FFFFFF;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  float: left;
+  min-height: 644px;
+  overflow-y: scroll;
+  padding: 3px 8px 8px 8px;
+  width: 300px; }
+  div.container-view-holder div.container-grid ul {
+    list-style: none; }
+    div.container-view-holder div.container-grid ul li {
+      border-bottom: 1px solid #dddddd;
+      cursor: pointer;
+      padding: 5px 0 5px 5px; }
+      div.container-view-holder div.container-grid ul li img {
+        vertical-align: text-bottom; }
+      div.container-view-holder div.container-grid ul li span.summary {
+        display: block;
+        margin-top: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+    div.container-view-holder div.container-grid ul li.selected {
+      background: #ebf2f9; }
+div.container-view-holder div.container-container {
+  border: 1px solid #dddddd;
+  border-top: none;
+  background: #FFFFFF;
+  float: left;
+  margin: 0 0 0 -1px; }
+  div.container-view-holder div.container-container div.selected-container {
+    padding: 20px; }
+  div.container-view-holder div.container-container div.container-title {
+    margin: 0 0 16px 0; }
+  div.container-view-holder div.container-container div.issue-main-column,
+  div.container-view-holder div.container-container div.issue-side-column {
+    display: inline-block;
+    vertical-align: top; }
+    div.container-view-holder div.container-container div.issue-main-column div.group,
+    div.container-view-holder div.container-container div.issue-side-column div.group {
+      margin: 0 0 20px 0;
+      width: inherit; }
+      div.container-view-holder div.container-container div.issue-main-column div.group div.group-title span.title,
+      div.container-view-holder div.container-container div.issue-side-column div.group div.group-title span.title {
+        font-weight: bold;
+        padding: 0 6px 0 0; }
+      div.container-view-holder div.container-container div.issue-main-column div.group div.column,
+      div.container-view-holder div.container-container div.issue-side-column div.group div.column {
+        display: inline-block;
+        line-height: 24px;
+        padding: 6px;
+        vertical-align: top; }
+        div.container-view-holder div.container-container div.issue-main-column div.group div.column span.key,
+        div.container-view-holder div.container-container div.issue-main-column div.group div.column span.value,
+        div.container-view-holder div.container-container div.issue-side-column div.group div.column span.key,
+        div.container-view-holder div.container-container div.issue-side-column div.group div.column span.value {
+          display: inline-block;
+          vertical-align: top; }
+        div.container-view-holder div.container-container div.issue-main-column div.group div.column span.key,
+        div.container-view-holder div.container-container div.issue-side-column div.group div.column span.key {
+          width: 135px; }
+        div.container-view-holder div.container-container div.issue-main-column div.group div.column span.value,
+        div.container-view-holder div.container-container div.issue-side-column div.group div.column span.value {
+          width: 235px; }
+          div.container-view-holder div.container-container div.issue-main-column div.group div.column span.value img,
+          div.container-view-holder div.container-container div.issue-side-column div.group div.column span.value img {
+            margin: 0 4px 0 0;
+            vertical-align: text-bottom; }
+      div.container-view-holder div.container-container div.issue-main-column div.group div.column.description p,
+      div.container-view-holder div.container-container div.issue-side-column div.group div.column.description p {
+        white-space: pre-wrap; }
+  div.container-view-holder div.container-container div.issue-main-column {
+    width: 776px; }
+  div.container-view-holder div.container-container div.issue-side-column {
+    margin: 0 0 0 24px;
+    width: 398px; }
 
 /*# sourceMappingURL=style.css.map */

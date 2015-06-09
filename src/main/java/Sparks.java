@@ -6,6 +6,7 @@
 
 import java.io.BufferedInputStream;
 import static spark.Spark.*;
+import utils.RequestHandler;
 
 /**
  *
@@ -17,12 +18,15 @@ public class Sparks implements spark.servlet.SparkApplication {
     
     @Override
     public void init() {
-        
-        CurlHandler h = new CurlHandler();
-        get("/containerslist", "application/json", (request, response) -> {
-            return h.ExecuteCurl("http://localhost:4567", "/containerslist", true);
-        });
+        RequestHandler handler = new RequestHandler();
 
+        get("/containerslist", "application/json", (request, response) -> {
+            return handler.getContainerList();
+        });
+        
+        /*
+        TODO: Remove this?
+        
         get("/hello/:name", "application/json", (request, response) -> {
             return "Hello: " + request.params(":name");
         });
@@ -74,5 +78,6 @@ public class Sparks implements spark.servlet.SparkApplication {
             
             return "[" + res.toString() + "]";
         });
+        */
     }
 }
