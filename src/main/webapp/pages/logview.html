@@ -1,0 +1,27 @@
+
+<div class="log-view-header">
+    
+</div>
+
+<div class="log-view-holder">
+    <!-- Grid -->
+    <div class="log-grid" id="log-grid">
+        <ul>
+            <li ng-repeat="date in dates" onclick="LogView.containerSelected(this)">
+                <a id="{{date.date}}">
+                    <span>{{date.date}}</span><br />
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="log-container">
+        <div class="selected-date" id="selected-date">
+            <div class="date-date">
+                <h1>Logbook Date</h1>
+            </div>
+            <div class="issue-main-column">
+                
+            </div>
+        </div>
+    </div>
+</div>

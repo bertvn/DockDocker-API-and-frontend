@@ -15,7 +15,13 @@ public class RequestHandler {
  
     public String getContainerList() {
         GetRequest req = new GetRequest("http://localhost:4567", "/containerslist");
-        req.execute();
+        req.execute();        
+        return req.getRespone();
+    }
+    
+    public String getLogs() {
+        GetRequest req = new GetRequest("http://localhost:4567", "/logfiles");
+        req.execute();        
         return req.getRespone();
     }
 }

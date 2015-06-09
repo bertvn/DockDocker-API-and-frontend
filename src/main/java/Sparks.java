@@ -24,6 +24,10 @@ public class Sparks implements spark.servlet.SparkApplication {
             return handler.getContainerList();
         });
         
+        get("/loglist", "application/json", (request, response) -> {
+            return handler.getLogs();
+        });
+        
         /*
         TODO: Remove this?
         
