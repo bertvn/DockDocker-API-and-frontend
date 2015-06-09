@@ -14,7 +14,7 @@ import utils.RequestHandler;
  */
 public class Sparks implements spark.servlet.SparkApplication {
 
-    private String projectLocation = "C:\\Users\\Bert\\Documents\\NetBeansProjects";
+    //private String projectLocation = "C:\\Users\\Bert\\Documents\\NetBeansProjects";
     
     @Override
     public void init() {

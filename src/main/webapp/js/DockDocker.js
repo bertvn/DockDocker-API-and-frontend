@@ -19,11 +19,18 @@ DockDocker = {
         });
         
         DockDocker.angular.controller('main', function ($scope) {
-            $scope.menu = [{
+            $scope.menu = [
+            {
+                titel: "Servers",
+                display: false
+            },{
                 titel: "Containers",
                 display: false
             }, {
-                titel: "Error log",
+                titel: "Statistics",
+                display: false
+            }, {
+                titel: "Logbook",
                 display: false
             }];
         });
