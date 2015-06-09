@@ -1,6 +1,6 @@
 
 <div class="container-view-header">
-    
+
 </div>
 
 <!-- Container view -->
@@ -8,17 +8,14 @@
     <!-- Grid -->
     <div class="container-grid" id="container-grid">
         <ul>
-            <li ng-repeat="container in containers" onclick="ContainerView.containerSelected(this)">
-                <a id="{{container.Id}}">
-                    <!-- TODO: change to custom image per container (showing default) -->
-                    <img src="images/container-icon.png" />
-                    <span>{{container.Names[0]}}</span><br />
-                    <span class="summary">{{container.Status}}</span>
-                </a>
+            <li ng-repeat="container in containers" ng-class="{selected : $index == selected}" ng-click="setSelected($index)">
+                <!-- TODO: change to custom image per container (showing default) -->
+                <img src="images/container-icon.png" />
+                <span>{{container.Names[0]}}</span><br />
+                <span class="summary">{{container.Status}}</span>
             </li>
         </ul>
     </div>
-    
     <div class="container-container">
         <div class="selected-container" id="selected-container">
             <div class="container-title">
@@ -31,7 +28,7 @@
                     </div>
                     <div class="column">
                         <span class="key">Name:</span>
-                        <span class="value">Name</span><br />
+                        <span class="value">{{containers[selected].Names[0]}}</span><br />
 
                         <span class="key">Up time:</span>
                         <span class="value">Up time</span><br />
