@@ -50,12 +50,13 @@ app.controller('page1Controller', function ($scope, Oboe) {
     $scope.tekst = [];
 
     Oboe({
-        url: 'list',
-        pattern: '{index}'
+        url: 'containerslist',
+        pattern: '{Id}'
     }).then(function () {
         // finished loading
     }, function (error) {
         // handle errors
+        console.log(error);
     }, function (node) {
         // node received
         console.log(node);

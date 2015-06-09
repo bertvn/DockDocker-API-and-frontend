@@ -17,8 +17,10 @@ public class Sparks implements spark.servlet.SparkApplication {
     
     @Override
     public void init() {
-        get("/hello", "application/json", (request, response) -> {
-            return "Hello World!";
+        
+        CurlHandler h = new CurlHandler();
+        get("/containerslist", "application/json", (request, response) -> {
+            return h.ExecuteCurl("http://localhost:4567", "/containerslist", true);
         });
 
         get("/hello/:name", "application/json", (request, response) -> {

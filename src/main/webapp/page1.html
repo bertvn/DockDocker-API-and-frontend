@@ -11,6 +11,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>{{tekst}}</div>
+        
+        <ul ng-repeat="item in tekst">
+            <li ng-click="item.display = !item.display">
+                <a>{{item.Id}}</a>
+            </li>
+        </ul> 
     </body>
 </html>
