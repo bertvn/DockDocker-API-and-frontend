@@ -25,6 +25,7 @@ app.controller('main', function ($scope) {
 });
 
 app.config(function ($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'pages/containerview.html', controller: 'ContainerViewController'})
+    $routeProvider.when('/', {templateUrl: 'pages/containerview.html', controller: 'ContainerViewController'}),
+    $routeProvider.when('/logbook', {templateUrl: 'pages/logview.html', controller: 'LogViewController'})
     .otherwise({redirectTo: '/'});
 });

@@ -14,7 +14,7 @@ app.controller('LogViewController', function ($scope, Oboe) {
 
     $scope.files = [];
         Oboe({
-           url: 'logbook',
+           url: 'loglist',
            pattern: '{file}'
         }).then(function () {
            // Finished loading

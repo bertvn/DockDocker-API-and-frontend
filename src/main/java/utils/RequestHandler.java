@@ -20,8 +20,8 @@ public class RequestHandler {
     }
     
     public String getLogs() {
-        GetRequest req = new GetRequest("http://localhost:4567", "/logfiles");
-        req.execute();        
+        GetRequest req = new GetRequest("http://localhost:4567", "/loglist");
+        req.execute();
         return req.getRespone();
     }
 }
