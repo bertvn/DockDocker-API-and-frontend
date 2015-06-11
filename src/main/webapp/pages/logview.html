@@ -7,9 +7,9 @@
     <!-- Grid -->
     <div class="log-grid" id="log-grid">
         <ul>
-            <li ng-repeat="date in dates" onclick="LogView.containerSelected(this)">
-                <a id="{{date.date}}">
-                    <span>{{date.date}}</span><br />
+            <li ng-repeat="file in files" onclick="LogView.logSelected(this)">
+                <a id="{{file.file}}">
+                    <span>{{file.file}}</span><br />
                 </a>
             </li>
         </ul>
