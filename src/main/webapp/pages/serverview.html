@@ -1,0 +1,101 @@
+
+<div class="container-view-header">
+    <!-- The space between the header and servers details box -->
+</div>
+
+<!-- Server details view -->
+<div class="container-view-holder">
+    <!-- Grid -->
+    <div class="container-grid" id="container-grid">
+        <ul>
+            <li ng-repeat="server in servers" ng-class="{selected : $index == selected}" ng-click="setSelected($index)">
+                <!-- TODO: change to custom image per container (showing default) -->
+                <div class="positionLeft">
+                    <img class="server-icon" src="images/server-icon.png" />
+                </div>
+                <div>
+                    <span class="summary">Name: {{server.serverName}}</span>
+                    <span class="summary">IP: {{server.serverIP}}</span>
+                    <span class="summary">Status: {{server.dockerStatus}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- END OF THE GRID -->
+    <div class="container-container">
+        <div class="selected-container" id="selected-container">
+            <div class="container-title">
+                <h1>Selected server</h1>
+            </div>
+            <div class="issue-main-column">
+                <div class="group">
+                    <div class="group-title">
+                        <span class="title">Details</span>
+                    </div>
+                    <div class="column">
+                        <span class="key">Name:</span>
+                        <span class="value">{{containers[selected].Names[0]}}</span><br />
+
+                        <span class="key">Up time:</span>
+                        <span class="value">Up time</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                    <div class="column">
+                        <span class="key">Status:</span>
+                        <span class="value">Running</span><br />
+
+                        <span class="key">Memory use:</span>
+                        <span class="value">1.000.000 MB</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="issue-side-column">
+                <div class="group">
+                    <div class="group-title">
+                        <span class="title">More info</span>
+                    </div>
+                    <div class="column">
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-title">
+                        <span class="title">More info</span>
+                    </div>
+                    <div class="column">
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+
+                        <span class="key">Key:</span>
+                        <span class="value">Value</span><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

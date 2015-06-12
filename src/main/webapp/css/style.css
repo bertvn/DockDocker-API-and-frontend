@@ -196,4 +196,13 @@ div.container-view-holder div.container-container {
     margin: 0 0 0 24px;
     width: 398px; }
 
+img.server-icon {
+  width: 50px;
+  height: 50px; }
+
+div.positionLeft {
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px; }
+
 /*# sourceMappingURL=style.css.map */
