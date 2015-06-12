@@ -7,9 +7,9 @@
     <!-- Grid -->
     <div class="log-grid" id="log-grid">
         <ul>
-            <li ng-repeat="file in files" onclick="LogView.logSelected(this)">
-                <a id="{{file.file}}">
-                    <span>{{file.file}}</span><br />
+            <li ng-repeat="File in files" ng-class="{selected : $index == selected}" ng-click="setSelected($index)">
+                <a id="{{File.File}}">
+                    <span>{{File.File}}</span><br />
                 </a>
             </li>
         </ul>
