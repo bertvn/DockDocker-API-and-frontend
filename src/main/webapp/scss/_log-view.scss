@@ -53,46 +53,24 @@ div.log-view-holder {
         }
     }
     
-    div.log-container {
+    div.log-log {
         border: 1px solid $border-color;
         border-top: none;
         background: $white-color;
         float: left;
         margin:  0 0 0 -1px;
         
-        div.selected-date {
+        div.selected-log {
             padding: 20px;
         }
         
-        div.date-date {
+        div.log-title {
             margin: 0 0 16px 0;
-        }
-
-        div.issue-main-column,
-        div.issue-side-column {
-            display: inline-block;
-            vertical-align: top;
-
-            div.group {
-                margin: 0 0 20px 0;
-                width: inherit;
-
-                div.group-title {
-                    span.title {
-                        font-weight: bold;
-                        padding: 0 6px 0 0;
-                    }
-                }
-            }
         }
 
         div.issue-main-column {
             width: 776px;
-        }
-
-        div.issue-side-column {
-            margin: 0 0 0 24px;
-            width: 398px;
+            
         }
     }
     
