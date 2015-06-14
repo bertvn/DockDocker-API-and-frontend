@@ -30,4 +30,15 @@ public class RequestHandler {
         req.execute();
         return req.getRespone();
     }
+
+    public String ContainerManage(String id, String what) {
+        if(what.equals("start") || what.equals("stop") || what.equals("restart")){
+            GetRequest req = new GetRequest("http://localhost:4567", "/containers/"+id+what);
+            req.execute();
+            return req.getRespone();
+        }
+        else{
+            return "no valid call";
+        }
+    }
 }

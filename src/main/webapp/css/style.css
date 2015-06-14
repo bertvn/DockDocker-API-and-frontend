@@ -195,6 +195,19 @@ div.container-view-holder div.container-container {
   div.container-view-holder div.container-container div.issue-side-column {
     margin: 0 0 0 24px;
     width: 398px; }
+  div.container-view-holder div.container-container div.issue-footer div.container-button {
+    padding: 5px;
+    width: 75px;
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    text-align: center; }
+  div.container-view-holder div.container-container div.issue-footer div.green {
+    background-color: greenyellow; }
+  div.container-view-holder div.container-container div.issue-footer div.red {
+    background-color: red; }
+  div.container-view-holder div.container-container div.issue-footer div.yellow {
+    background-color: yellow; }
 
 /*
 To change this license header, choose License Headers in Project Properties.

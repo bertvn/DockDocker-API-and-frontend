@@ -27,20 +27,20 @@
                         <span class="title">Details</span>
                     </div>
                     <div class="column">
+                        <span class="key">ID:</span>
+                        <span class="value">{{containers[selected].Id}}</span><br />
+                        
                         <span class="key">Name:</span>
                         <span class="value">{{containers[selected].Names[0]}}</span><br />
 
-                        <span class="key">Up time:</span>
-                        <span class="value">Up time</span><br />
+                        <span class="key">Status:</span>
+                        <span class="value">{{containers[selected].Status}}</span><br />
 
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Created:</span>
+                        <span class="value">{{containers[selected].Created}}</span><br />
 
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Image:</span>
+                        <span class="value">{{containers[selected].Image}}</span><br />
                     </div>
                     <div class="column">
                         <span class="key">Status:</span>
@@ -58,20 +58,14 @@
             <div class="issue-side-column">
                 <div class="group">
                     <div class="group-title">
-                        <span class="title">More info</span>
+                        <span class="title">Size</span>
                     </div>
                     <div class="column">
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Size Root system:</span>
+                        <span class="value">{{containers[selected].SizeRootFs}}</span><br />
 
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Size created/changed:</span>
+                        <span class="value">{{containers[selected].SizeRW}}</span><br />
                     </div>
                 </div>
                 <div class="group">
@@ -88,6 +82,17 @@
                         <span class="key">Key:</span>
                         <span class="value">Value</span><br />
                     </div>
+                </div>
+            </div>
+            <div class="issue-footer">
+                <div class="container-button green">
+                    <a onclick="execute('start', {{containers[selected].Id}})">Start</a>
+                </div>
+                <div class="container-button red">
+                    <a onclick="execute('stop', {{containers[selected].Id}})">Stop</a>
+                </div>
+                <div class="container-button yellow">
+                    <a onclick="execute('restart', {{containers[selected].Id}})">Restart</a>
                 </div>
             </div>
         </div>

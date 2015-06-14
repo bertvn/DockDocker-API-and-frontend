@@ -9,7 +9,14 @@ app.controller('ContainerViewController', function ($scope, Oboe) {
     
     $scope.setSelected = function(index){
         $scope.selected = index;
-    }
+    };
+    
+    $scope.execute = function(What, Id){
+        console.log("here " + What + Id);
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "localhost:8084/API/"+Id+What, false);
+        xhr.send();
+    };
 
     $scope.containers = [];
     Oboe({
