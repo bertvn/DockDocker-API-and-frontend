@@ -11,6 +11,23 @@ app.controller('LogViewController', function ($scope, Oboe) {
     $scope.setSelected = function(index){
         $scope.selected = index;
     }
+    
+    $scope.log = [];
+    $scope.logupdate = function(file){
+        $scope.log = [];
+        Oboe({
+            url: 'read/'+file,
+            pattern: '{LogLine}'
+        }).then(function () {
+            //Finished loading
+        }, function (error) {
+            //handle errors
+            console.log(error);
+        }, function (node) {
+            //Node received
+            $scope.log.push(node);
+        });
+    }
 
     $scope.files = [];
         Oboe({
@@ -24,5 +41,5 @@ app.controller('LogViewController', function ($scope, Oboe) {
         }, function (node) {
         // Node received
         $scope.files.push(node);
+        });
     });
-});

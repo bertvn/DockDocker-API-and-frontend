@@ -71,6 +71,14 @@ div.log-view-holder {
         div.issue-main-column {
             width: 776px;
             
+            div.log-data{
+                background-color: #696969;
+                height: 500px;
+                widht: 500px;
+                overflow: hidden;
+                scrollable: true;
+            }
+            
         }
     }
     

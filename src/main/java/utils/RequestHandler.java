@@ -18,8 +18,14 @@ public class RequestHandler {
         req.execute();        
         return req.getRespone();
     }
-    
-    public String getLogs() {
+
+    public String getLogs(String name) {
+        GetRequest req = new GetRequest("http://localhost:4567", "/read/"+name);
+        req.execute();
+        return req.getRespone();
+    }
+
+    public String getLogList() {
         GetRequest req = new GetRequest("http://localhost:4567", "/loglist");
         req.execute();
         return req.getRespone();

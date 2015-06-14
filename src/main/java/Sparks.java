@@ -25,7 +25,11 @@ public class Sparks implements spark.servlet.SparkApplication {
         });
         
         get("/loglist", "application/json", (request, response) -> {
-            return handler.getLogs();
+            return handler.getLogList();
+        });
+        
+        get("/read/:name", "application/json", (request, response) -> {
+            return handler.getLogs(request.params(":name"));
         });
         
         /*
