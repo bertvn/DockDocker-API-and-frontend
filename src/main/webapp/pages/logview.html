@@ -7,11 +7,9 @@
     <!-- Grid -->
     <div class="log-grid" id="log-grid">
         <ul>
-            <li ng-repeat="File in files" ng-class="{selected : $index == selected}" ng-click="setSelected($index)">
-                <a id="{{File.File}}" ng-click="logupdate(File.File)">
+            <li ng-repeat="File in files" ng-class="{selected : $index == selected}" ng-click="logupdate($index, File.File)">
                     <span>{{File.File}}</span><br />
                     <span>{{File.LastMod}}</span><br />
-                </a>
             </li>
         </ul>
     </div>
@@ -23,7 +21,7 @@
             <div class="issue-main-column">
                 <div class="log-data">
                     <span ng-repeat="logline in log">
-                        {{logline.LogLine}}
+                        {{logline.LogLine}}<br />
                     </span>
                 </div>
             </div>

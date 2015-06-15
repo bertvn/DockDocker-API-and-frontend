@@ -72,11 +72,10 @@ div.log-view-holder {
             width: 776px;
             
             div.log-data{
-                background-color: #696969;
                 height: 500px;
-                widht: 500px;
-                overflow: hidden;
-                scrollable: true;
+                width: 750px;
+                overflow-y: scroll;
+                padding-top: 5px;
             }
             
         }

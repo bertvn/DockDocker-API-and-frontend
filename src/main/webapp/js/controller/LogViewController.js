@@ -8,12 +8,9 @@ app.controller('LogViewController', function ($scope, Oboe) {
 
     $scope.selected = null;
     
-    $scope.setSelected = function(index){
-        $scope.selected = index;
-    }
-    
     $scope.log = [];
-    $scope.logupdate = function(file){
+    $scope.logupdate = function(index, file){
+        $scope.selected = index;
         $scope.log = [];
         Oboe({
             url: 'read/'+file,
