@@ -22,6 +22,7 @@ html, * {
 
 body {
   background: #f5f5f5;
+  color: #333;
   font-family: Arial, sans-serif;
   font-size: 14px; }
 
@@ -48,8 +49,8 @@ div.page {
     min-height: 500px;
     width: 13.9%; }
   div.page div.view-area {
-    border-bottom: 1px solid #dddddd;
-    border-left: 1px solid #dddddd;
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
     float: left;
     min-height: 500px;
     width: 82%; }
@@ -64,7 +65,7 @@ and open the template in the editor.
     Author     : Patrick
 */
 div.menu {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #cccccc;
   padding: 10px;
   width: 180px; }
   div.menu ul {
@@ -96,12 +97,35 @@ a:hover {
 
 .default-action {
   background: #3572b0;
-  border: 1px solid #dddddd;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   color: #FFFFFF; }
 
 .default-action:hover {
   background: #205081; }
+
+.container-button {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  padding: 0px 10px;
+  line-height: 26px; }
+
+.container-button:hover {
+  color: #333;
+  opacity: 0.8;
+  text-decoration: none; }
+
+.container-button.red {
+  background-color: red; }
+
+.container-button.green {
+  background-color: greenyellow; }
+
+.container-button.yellow {
+  background-color: yellow; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -113,15 +137,15 @@ and open the template in the editor.
     Author     : Patrick
 */
 div.container-view-header {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #cccccc;
   height: 40px;
   padding: 8px;
   width: 100%; }
 
 div.container-view-holder div.container-grid {
   background: #FFFFFF;
-  border-right: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
   float: left;
   min-height: 644px;
   overflow-y: scroll;
@@ -130,7 +154,7 @@ div.container-view-holder div.container-grid {
   div.container-view-holder div.container-grid ul {
     list-style: none; }
     div.container-view-holder div.container-grid ul li {
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 1px solid #cccccc;
       cursor: pointer;
       padding: 5px 0 5px 5px; }
       div.container-view-holder div.container-grid ul li img {
@@ -144,7 +168,7 @@ div.container-view-holder div.container-grid {
     div.container-view-holder div.container-grid ul li.selected {
       background: #ebf2f9; }
 div.container-view-holder div.container-container {
-  border: 1px solid #dddddd;
+  border: 1px solid #cccccc;
   border-top: none;
   background: #FFFFFF;
   float: left;
@@ -192,22 +216,11 @@ div.container-view-holder div.container-container {
         white-space: pre-wrap; }
   div.container-view-holder div.container-container div.issue-main-column {
     width: 776px; }
+    div.container-view-holder div.container-container div.issue-main-column div.button-holder .container-button {
+      display: inline-block; }
   div.container-view-holder div.container-container div.issue-side-column {
     margin: 0 0 0 24px;
     width: 398px; }
-  div.container-view-holder div.container-container div.issue-footer div.container-button {
-    padding: 5px;
-    width: 75px;
-    float: left;
-    margin-left: 50px;
-    margin-bottom: 40px;
-    text-align: center; }
-  div.container-view-holder div.container-container div.issue-footer div.green {
-    background-color: greenyellow; }
-  div.container-view-holder div.container-container div.issue-footer div.red {
-    background-color: red; }
-  div.container-view-holder div.container-container div.issue-footer div.yellow {
-    background-color: yellow; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -219,15 +232,15 @@ and open the template in the editor.
     Author     : Cyvan
 */
 div.log-view-header {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #cccccc;
   height: 40px;
   padding: 8px;
   width: 100%; }
 
 div.log-view-holder div.log-grid {
   background: #FFFFFF;
-  border-right: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
   float: left;
   min-height: 644px;
   overflow-y: scroll;
@@ -236,7 +249,7 @@ div.log-view-holder div.log-grid {
   div.log-view-holder div.log-grid ul {
     list-style: none; }
     div.log-view-holder div.log-grid ul li {
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 1px solid #cccccc;
       cursor: pointer;
       padding: 5px 0 5px 5px; }
       div.log-view-holder div.log-grid ul li img {
@@ -250,7 +263,7 @@ div.log-view-holder div.log-grid {
     div.log-view-holder div.log-grid ul li.selected {
       background: #ebf2f9; }
 div.log-view-holder div.log-log {
-  border: 1px solid #dddddd;
+  border: 1px solid #cccccc;
   border-top: none;
   background: #FFFFFF;
   float: left;

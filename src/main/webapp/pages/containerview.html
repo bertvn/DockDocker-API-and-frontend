@@ -10,9 +10,11 @@
         <ul>
             <li ng-repeat="container in containers" ng-class="{selected : $index == selected}" ng-click="setSelected($index)">
                 <!-- TODO: change to custom image per container (showing default) -->
-                <img src="images/container-icon.png" />
-                <span>{{container.Names[0]}}</span><br />
-                <span class="summary">{{container.Status}}</span>
+                <a>
+                    <img src="images/container-icon.png" />
+                    <span>{{container.Name}}</span><br />
+                    <span class="summary">{{container.Status}}</span>
+                </a>
             </li>
         </ul>
     </div>
@@ -27,30 +29,64 @@
                         <span class="title">Details</span>
                     </div>
                     <div class="column">
-                        <span class="key">ID:</span>
-                        <span class="value">{{containers[selected].Id}}</span><br />
-                        
                         <span class="key">Name:</span>
-                        <span class="value">{{containers[selected].Names[0]}}</span><br />
+                        <span class="value">{{containers[selected].Name}}</span><br />
+                        
+                        <span class="key">Image:</span>
+                        <span class="value">{{containers[selected].Config.Image}}</span><br />
 
-                        <span class="key">Status:</span>
-                        <span class="value">{{containers[selected].Status}}</span><br />
-
-                        <span class="key">Created:</span>
+                        <span class="key">Created on:</span>
                         <span class="value">{{containers[selected].Created}}</span><br />
 
-                        <span class="key">Image:</span>
-                        <span class="value">{{containers[selected].Image}}</span><br />
+                        <span class="key">State:</span>
+                        <span class="value">
+                            <span ng-if="containers[selected].State.Running == true">
+                                Running
+                            </span>
+                            <span ng-if="containers[selected].State.Running == false">
+                                Stopped
+                            </span>
+                        </span><br />
+
+                        <span class="key">
+                            <span ng-if="containers[selected].State.Running == false">
+                                (last) 
+                            </span>
+                            Started at:
+                        </span>
+                        <span class="value">
+                            {{containers[selected].State.StartedAt}}
+                        </span><br />
                     </div>
                     <div class="column">
-                        <span class="key">Status:</span>
-                        <span class="value">Running</span><br />
+                        <span class="key">Restarted:</span>
+                        <span class="value">
+                            {{containers[selected].RestartCount}} times
+                        </span><br />
 
                         <span class="key">Memory use:</span>
-                        <span class="value">1.000.000 MB</span><br />
+                        <span class="value">{{containers[selected].RestartCount}} MB</span><br />
 
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Driver:</span>
+                        <span class="value">{{containers[selected].Driver}}</span><br />
+                        
+                        <span class="key">Execute Driver</span>
+                        <span class="value">{{containers[selected].ExecDriver}}</span><br />
+                        
+                        <div class="button-holder">
+                            <a onclick="ContainerView.executeTask('start', {{containers[selected].Id}})" 
+                               class="container-button green">
+                                Start
+                            </a>
+                            <a onclick="ContainerView.executeTask('stop', {{containers[selected].Id}})" 
+                               class="container-button red">
+                                Stop
+                            </a>
+                            <a onclick="ContainerView.executeTask('restart', {{containers[selected].Id}})" 
+                               class="container-button yellow">
+                                Restart
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,29 +106,25 @@
                 </div>
                 <div class="group">
                     <div class="group-title">
-                        <span class="title">More info</span>
+                        <span class="title">Network</span>
                     </div>
                     <div class="column">
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">IP address:</span>
+                        <span class="value">{{containers[selected].NetworkSettings.IPAddress}}</span><br />
 
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Ports:</span>
+                        <span class="value">  
+                            <span ng-repeat="(key, value) in containers[selected].Config.ExposedPorts">
+                                {{key}}
+                            </span>
+                        </span><br />
 
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Gateway:</span>
+                        <span class="value">{{containers[selected].NetworkSettings.Gateway}}</span><br />
+                        
+                        <span class="key">Bridge:</span>
+                        <span class="value">{{containers[selected].NetworkSettings.Bridge}}</span><br />
                     </div>
-                </div>
-            </div>
-            <div class="issue-footer">
-                <div class="container-button green">
-                    <a onclick="execute('start', {{containers[selected].Id}})">Start</a>
-                </div>
-                <div class="container-button red">
-                    <a onclick="execute('stop', {{containers[selected].Id}})">Stop</a>
-                </div>
-                <div class="container-button yellow">
-                    <a onclick="execute('restart', {{containers[selected].Id}})">Restart</a>
                 </div>
             </div>
         </div>

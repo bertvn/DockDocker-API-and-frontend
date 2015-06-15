@@ -33,3 +33,25 @@ app.controller('ContainerViewController', function ($scope, Oboe) {
     });
 });
 
+
+/* 
+ * DockDocker Dashboard Application
+ * @author: DockDocker development team
+ * @created: 9-6-2015
+ */
+ContainerView = {
+    // Overall settings and variables
+    
+    
+    /*
+    * Initializes the Overview object
+    * Prepares the functions needed and sets the state
+    */
+    initialize: function () {
+        
+    },
+    
+    executeTask: function(action, containerId) {
+        console.log("execute called with action: "+ action + " containerId: "+ containerId);
+    }
+}

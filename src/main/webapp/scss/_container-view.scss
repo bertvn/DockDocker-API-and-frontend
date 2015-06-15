@@ -120,35 +120,17 @@ div.container-view-holder {
 
         div.issue-main-column {
             width: 776px;
+            
+            div.button-holder {
+                .container-button {
+                    display: inline-block;
+                }
+            }
         }
 
         div.issue-side-column {
             margin: 0 0 0 24px;
             width: 398px;
         }
-        
-        div.issue-footer {
-            div.container-button{
-                padding: 5px;
-                width: 75px;
-                float: left;
-                margin-left: 50px;
-                margin-bottom: 40px;
-                text-align: center;
-            }
-            
-            div.green {
-                background-color: greenyellow;
-            }
-            
-            div.red {
-                background-color: red;
-            }
-            
-            div.yellow{
-                background-color: yellow;
-            }
-        }
     }
-    
 }

@@ -6,7 +6,9 @@
 package utils.request;
 
 /**
- *
+ * Realization for Request
+ * 
+ * @see: IRequest
  * @author Patrick
  */
 public abstract class Request implements IRequest {
@@ -15,11 +17,22 @@ public abstract class Request implements IRequest {
     protected String url;
     protected String response;
     
+    /**
+     * Constructor
+     * 
+     * @param domain: domain to send request to
+     * @param url: url / action 
+     */
     public Request(String domain, String url) {
         this.domain = domain;
         this.url = url;
     }
-
+    
+    /**
+     * Gives response of request
+     * 
+     * @return String response
+     */
     public String getRespone() {
         return response;
     }
