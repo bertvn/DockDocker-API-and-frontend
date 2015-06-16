@@ -10,23 +10,28 @@ app.controller('main', function ($scope) {
     $scope.menu = [
         {
             titel: "Servers",
-            display: false
+            display: false,
+            link:   "/API/#/servers"
         },{
             titel: "Containers",
-            display: false
+            display: false,
+            link:   "/API/#/containers"
         }, {
             titel: "Statistics",
-            display: false
+            display: false,
+            link:   "/API/#/statistics"
         }, {
             titel: "Logbook",
-            display: false
+            display: false,
+            link:   "/API/#/logbook"
         }
     ];
 });
 
 app.config(function ($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'pages/containerview.html', controller: 'ContainerViewController'})
+    $routeProvider.when('/', {templateUrl: 'pages/serverview.html', controller: 'ContainerViewController'})
     .when('/servers', {templateUrl: 'pages/serverview.html', controller: 'ServerViewController'})
+    .when('/containers', {templateUrl: 'pages/containerview.html', controller: 'ContainerViewController'})
     .when('/logbook', {templateUrl: 'pages/logview.html', controller: 'LogViewController'})
     .otherwise({redirectTo: '/'});
 });
