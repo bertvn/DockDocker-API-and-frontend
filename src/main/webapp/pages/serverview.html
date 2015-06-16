@@ -14,9 +14,9 @@
                     <img class="server-icon" src="images/server-icon.png" />
                 </div>
                 <div>
-                    <span class="summary">Name: {{server.serverName}}</span>
-                    <span class="summary">IP: {{server.serverIP}}</span>
-                    <span class="summary">Status: {{server.dockerStatus}}</span>
+                    <span class="summary">Name: {{server.SERVER_NAME}}</span>
+                    <span class="summary">IP: {{server.SERVER_IP}}</span>
+                    <span class="summary">Status: {{server.DOCKER_STATUS}}</span>
                 </div>
             </li>
         </ul>
@@ -25,7 +25,7 @@
     <div class="container-container">
         <div class="selected-container" id="selected-container">
             <div class="container-title">
-                <h1>Selected server</h1>
+                <h1>Selected server: {{servers[selected].SERVER_NAME}}</h1>
             </div>
             <div class="issue-main-column">
                 <div class="group">
@@ -34,7 +34,7 @@
                     </div>
                     <div class="column">
                         <span class="key">Name:</span>
-                        <span class="value">{{containers[selected].Names[0]}}</span><br />
+                        <span class="value">{{servers[selected].SERVER_NAME}}</span><br />
 
                         <span class="key">Up time:</span>
                         <span class="value">Up time</span><br />

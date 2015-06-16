@@ -1,17 +1,7 @@
-app.controller('ServerViewController', function ($scope, Oboe) {
+app.controller('ServerViewController', function ($scope, Oboe, $http) {
     $scope.selected = null;
     
-    $scope.servers = [
-        {   id: 1, 
-            serverName: "ubuntu", 
-            serverIP: "192.168.1.1", 
-            dockerStatus: "ready"
-        },
-        {   id: 2, 
-            serverName: "windows", 
-            serverIP: "127.0.0.1", 
-            dockerStatus: "config"
-        }];
+    $scope.servers = [];
     
     
     $scope.setSelected = function(index){
@@ -24,10 +14,9 @@ app.controller('ServerViewController', function ($scope, Oboe) {
         //console.log(getName);
     }
           
-    /*
     Oboe({
         url: 'serverslist',
-        pattern: '{Id}'
+        pattern: '{ID}'
     }).then(function () {
         // Finished loading
     }, function (error) {
@@ -37,6 +26,5 @@ app.controller('ServerViewController', function ($scope, Oboe) {
         // Node received
         $scope.servers.push(node);
     });
-    */
 });
 

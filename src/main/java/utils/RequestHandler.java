@@ -41,4 +41,10 @@ public class RequestHandler {
             return "no valid call";
         }
     }
+
+    public String getServerList() {
+        GetRequest req = new GetRequest("http://localhost:4567", "/servers");
+        req.execute();
+        return req.getRespone();
+    }
 }

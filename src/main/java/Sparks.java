@@ -25,6 +25,11 @@ public class Sparks implements spark.servlet.SparkApplication {
             return handler.getContainerList();
         });
         
+        get("/serverslist", "application/json", (request, response) -> {
+            RequestHandler handler = new RequestHandler();
+            return handler.getServerList();
+        });
+        
         get("/container/:id/:action", "application/json", (request, response) -> {
             RequestHandler handler = new RequestHandler();
             return handler.ContainerManage(request.params(":id"), request.params(":action"));
