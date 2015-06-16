@@ -47,4 +47,16 @@ public class RequestHandler {
         req.execute();
         return req.getRespone();
     }
+    
+    public String deteleServerFromList(String id) {
+        GetRequest req = new GetRequest("http://localhost:4567", "/deleteServer/" + id);
+        req.execute();
+        return req.getRespone();
+    }
+    
+    public String addServerToList(String server_name, String server_ip, String docker_status) {
+        GetRequest req = new GetRequest("http://localhost:4567", "/addServer/" +server_name+ "/" +server_ip+ "/" + docker_status);
+        req.execute();
+        return req.getRespone();
+    }
 }

@@ -280,13 +280,138 @@ div.log-view-holder div.log-log {
       overflow-y: scroll;
       padding-top: 5px; }
 
-img.server-icon {
-  width: 50px;
-  height: 50px; }
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 9, 2015, 4:17:10 PM
+    Author     : Ivan
+*/
+div.server-view-header {
+  border-bottom: 1px solid #cccccc;
+  height: 40px;
+  padding: 8px;
+  width: 100%; }
+  div.server-view-header input.greenBtn {
+    background-color: #BEE35F;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid white;
+    color: white; }
+  div.server-view-header input.redBtn {
+    background-color: #F299AC;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid white;
+    color: white; }
+  div.server-view-header input.greenBtn:hover {
+    background-color: #BEE35F;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid #3572b0;
+    color: #3572b0; }
+  div.server-view-header input.redBtn:hover {
+    background-color: #F299AC;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid #3572b0;
+    color: #3572b0; }
+
+div.server-view-holder div.server-grid {
+  background: #FFFFFF;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  float: left;
+  min-height: 750px;
+  overflow-y: scroll;
+  padding: 3px 8px 8px 8px;
+  width: 300px; }
+  div.server-view-holder div.server-grid img.server-icon {
+    width: 50px;
+    height: 50px; }
+  div.server-view-holder div.server-grid ul {
+    list-style: none; }
+    div.server-view-holder div.server-grid ul li {
+      border-bottom: 1px solid #cccccc;
+      cursor: pointer;
+      padding: 5px 0 5px 5px; }
+      div.server-view-holder div.server-grid ul li img {
+        vertical-align: text-bottom; }
+      div.server-view-holder div.server-grid ul li span.summary {
+        display: block;
+        margin-top: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+    div.server-view-holder div.server-grid ul li.selected {
+      background: #ebf2f9; }
+div.server-view-holder div.server-container {
+  border: 1px solid #cccccc;
+  border-top: none;
+  background: #FFFFFF;
+  float: left;
+  margin: 0 0 0 -1px;
+  width: 1240px;
+  height: 761px; }
+  div.server-view-holder div.server-container div.selected-server {
+    padding: 20px; }
+  div.server-view-holder div.server-container div.server-title {
+    margin: 0 0 16px 0; }
+  div.server-view-holder div.server-container div.issue-main-column,
+  div.server-view-holder div.server-container div.issue-side-column {
+    display: inline-block;
+    vertical-align: top; }
+    div.server-view-holder div.server-container div.issue-main-column div.group,
+    div.server-view-holder div.server-container div.issue-side-column div.group {
+      margin: 0 0 20px 0;
+      width: inherit; }
+      div.server-view-holder div.server-container div.issue-main-column div.group div.group-title span.title,
+      div.server-view-holder div.server-container div.issue-side-column div.group div.group-title span.title {
+        font-weight: bold;
+        padding: 0 6px 0 0; }
+      div.server-view-holder div.server-container div.issue-main-column div.group div.column,
+      div.server-view-holder div.server-container div.issue-side-column div.group div.column {
+        display: inline-block;
+        line-height: 24px;
+        padding: 6px;
+        vertical-align: top; }
+        div.server-view-holder div.server-container div.issue-main-column div.group div.column span.key,
+        div.server-view-holder div.server-container div.issue-main-column div.group div.column span.value,
+        div.server-view-holder div.server-container div.issue-side-column div.group div.column span.key,
+        div.server-view-holder div.server-container div.issue-side-column div.group div.column span.value {
+          display: inline-block;
+          vertical-align: top; }
+        div.server-view-holder div.server-container div.issue-main-column div.group div.column span.key,
+        div.server-view-holder div.server-container div.issue-side-column div.group div.column span.key {
+          width: 135px; }
+        div.server-view-holder div.server-container div.issue-main-column div.group div.column span.value,
+        div.server-view-holder div.server-container div.issue-side-column div.group div.column span.value {
+          width: 235px; }
+          div.server-view-holder div.server-container div.issue-main-column div.group div.column span.value img,
+          div.server-view-holder div.server-container div.issue-side-column div.group div.column span.value img {
+            margin: 0 4px 0 0;
+            vertical-align: text-bottom; }
+      div.server-view-holder div.server-container div.issue-main-column div.group div.column.description p,
+      div.server-view-holder div.server-container div.issue-side-column div.group div.column.description p {
+        white-space: pre-wrap; }
+  div.server-view-holder div.server-container div.issue-main-column {
+    width: 776px; }
+    div.server-view-holder div.server-container div.issue-main-column div.button-holder .server-button {
+      display: inline-block; }
+  div.server-view-holder div.server-container div.issue-side-column {
+    margin: 0 0 0 24px;
+    width: 398px; }
 
 div.positionLeft {
   float: left;
   margin-right: 5px;
   margin-top: 5px; }
+
+div.page div.menu {
+  float: left;
+  min-height: 800px;
+  width: 13.9%; }
 
 /*# sourceMappingURL=style.css.map */

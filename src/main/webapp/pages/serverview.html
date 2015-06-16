@@ -1,14 +1,18 @@
 
-<div class="container-view-header">
+<div class="server-view-header">
     <!-- The space between the header and servers details box -->
+    <div>
+        <input id="addServerBtn" class="greenBtn" type="submit" value="Add server" ng-click=""/>
+        <input id="deleteServenBtn" class="redBtn" type="submit" value="Delete server" ng-click="deleteServer()"/>
+    </div>
 </div>
 
 <!-- Server details view -->
-<div class="container-view-holder">
+<div class="server-view-holder">
     <!-- Grid -->
-    <div class="container-grid" id="container-grid">
+    <div class="server-grid" id="server-grid">
         <ul>
-            <li ng-repeat="server in servers" ng-class="{selected : $index == selected}" ng-click="setSelected($index)">
+            <li ng-repeat="server in servers" ng-class="{selected : $index == selected}" ng-click="setSelected($index, server.ID)">
                 <!-- TODO: change to custom image per container (showing default) -->
                 <div class="positionLeft">
                     <img class="server-icon" src="images/server-icon.png" />
@@ -22,11 +26,15 @@
         </ul>
     </div>
     <!-- END OF THE GRID -->
-    <div class="container-container">
-        <div class="selected-container" id="selected-container">
-            <div class="container-title">
+    <div class="server-container">
+        <div class="server-title" ng-hide="selected != null">
+            <h1>Select a server to see more information.</h1>
+        </div>
+        <div class="selected-server" id="selected-server" ng-show="selected != null">
+            <div class="server-title">
                 <h1>Selected server: {{servers[selected].SERVER_NAME}}</h1>
             </div>
+            
             <div class="issue-main-column">
                 <div class="group">
                     <div class="group-title">
@@ -36,18 +44,13 @@
                         <span class="key">Name:</span>
                         <span class="value">{{servers[selected].SERVER_NAME}}</span><br />
 
-                        <span class="key">Up time:</span>
-                        <span class="value">Up time</span><br />
+                        <span class="key">IP address: </span>
+                        <span class="value">{{servers[selected].SERVER_IP}}</span><br />
 
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
+                        <span class="key">Docker status:</span>
+                        <span class="value">{{servers[selected].DOCKER_STATUS}}</span><br />
                     </div>
+                    <!--
                     <div class="column">
                         <span class="key">Status:</span>
                         <span class="value">Running</span><br />
@@ -80,6 +83,7 @@
                         <span class="value">Value</span><br />
                     </div>
                 </div>
+                <!--
                 <div class="group">
                     <div class="group-title">
                         <span class="title">More info</span>
@@ -95,6 +99,7 @@
                         <span class="value">Value</span><br />
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </div>

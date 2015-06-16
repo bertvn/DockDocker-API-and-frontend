@@ -1,7 +1,180 @@
-img.server-icon {
-    width: 50px;
-    height: 50px;
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 9, 2015, 4:17:10 PM
+    Author     : Ivan
+*/
+div.server-view-header {
+    border-bottom: 1px solid $border-color;
+    height: 40px;
+    padding: 8px;
+    width: 100%;
+    
+    input.greenBtn {
+        background-color: #BEE35F;
+        padding: 10px;
+        border: none;
+        border-bottom: 4px solid white;
+        color: white;
+    }
+    
+    input.redBtn {
+        background-color:  #F299AC;
+        padding: 10px;
+        border: none;
+        border-bottom: 4px solid white;
+        color: white;
+    }
+    
+    //hovers
+    input.greenBtn:hover {
+        background-color: #BEE35F;
+        padding: 10px;
+        border: none;
+        border-bottom: 4px solid #3572b0;
+        color: #3572b0;
+    }
+    
+    input.redBtn:hover {
+        background-color:  #F299AC;
+        padding: 10px;
+        border: none;
+        border-bottom: 4px solid #3572b0;
+        color: #3572b0;
+    }
 }
+
+div.server-view-holder {
+    
+    div.server-grid {
+        background: $white-color;
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        float: left;
+        min-height: 750px;
+        overflow-y: scroll;
+        padding: 3px 8px 8px 8px;
+        width: 300px;
+
+        img.server-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                border-bottom: 1px solid $border-color;
+                cursor: pointer;
+                padding: 5px 0 5px 5px;
+
+                img {
+                    vertical-align: text-bottom;
+                }
+
+                span.summary {
+                    display: block;
+                    margin-top: 3px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            
+            li.selected {
+                background: $selected-color;
+            }
+        }
+    }
+    
+    div.server-container {
+        border: 1px solid $border-color;
+        border-top: none;
+        background: $white-color;
+        float: left;
+        margin:  0 0 0 -1px;
+        width: 1240px;
+        height: 761px;
+        
+        div.selected-server {
+            padding: 20px;
+        }
+        
+        div.server-title {
+            margin: 0 0 16px 0;
+        }
+
+        div.issue-main-column,
+        div.issue-side-column {
+            display: inline-block;
+            vertical-align: top;
+
+            div.group {
+                margin: 0 0 20px 0;
+                width: inherit;
+
+                div.group-title {
+                    span.title {
+                        font-weight: bold;
+                        padding: 0 6px 0 0;
+                    }
+                }
+
+                div.column {
+                    display: inline-block;
+                    line-height: 24px;
+                    padding: 6px;
+                    vertical-align: top;
+
+                    span.key,
+                    span.value {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
+                    span.key {
+                        width: 135px;
+                    }
+
+                    span.value {
+                        width: 235px;
+
+                        img {
+                            margin: 0 4px 0 0;
+                            vertical-align: text-bottom;
+                        }
+                    }
+                }
+
+                div.column.description {
+                    p {
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+        }
+
+        div.issue-main-column {
+            width: 776px;
+            
+            div.button-holder {
+                .server-button {
+                    display: inline-block;
+                }
+            }
+        }
+
+        div.issue-side-column {
+            margin: 0 0 0 24px;
+            width: 398px;
+        }
+    }
+}
+
 
 div.positionLeft {
     float: left;
@@ -9,3 +182,8 @@ div.positionLeft {
     margin-top: 5px;
 }
 
+div.page div.menu {
+    float: left;
+    min-height: 800px;
+    width: 13.9%;
+}
