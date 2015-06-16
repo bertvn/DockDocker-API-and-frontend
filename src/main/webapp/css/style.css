@@ -325,6 +325,7 @@ div.server-view-holder div.server-grid {
   border-bottom: 1px solid #cccccc;
   float: left;
   min-height: 750px;
+  max-height: 750px;
   overflow-y: scroll;
   padding: 3px 8px 8px 8px;
   width: 300px; }
@@ -356,7 +357,8 @@ div.server-view-holder div.server-container {
   width: 1240px;
   height: 761px; }
   div.server-view-holder div.server-container div.selected-server {
-    padding: 20px; }
+    padding: 20px;
+    margin-left: 20px; }
   div.server-view-holder div.server-container div.server-title {
     margin: 0 0 16px 0; }
   div.server-view-holder div.server-container div.issue-main-column,
@@ -413,5 +415,29 @@ div.page div.menu {
   float: left;
   min-height: 800px;
   width: 13.9%; }
+
+input.server-input {
+  padding: 10px;
+  width: 392px;
+  display: block;
+  margin: 10px; }
+
+input.form-button {
+  padding: 10px;
+  width: 200px;
+  margin-left: 10px;
+  border: none;
+  border-top: 5px solid #e0e0e0;
+  background-color: #5c6bc0;
+  color: #e0e0e0; }
+
+input.form-button:hover {
+  padding: 10px;
+  width: 200px;
+  margin-left: 10px;
+  border: none;
+  border-top: 5px solid #5c6bc0;
+  background-color: #e0e0e0;
+  color: #5c6bc0; }
 
 /*# sourceMappingURL=style.css.map */

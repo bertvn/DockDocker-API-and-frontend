@@ -2,7 +2,7 @@
 <div class="server-view-header">
     <!-- The space between the header and servers details box -->
     <div>
-        <input id="addServerBtn" class="greenBtn" type="submit" value="Add server" ng-click=""/>
+        <input id="addServerBtn" class="greenBtn" type="submit" value="Add server" ng-click="addServer()"/>
         <input id="deleteServenBtn" class="redBtn" type="submit" value="Delete server" ng-click="deleteServer()"/>
     </div>
 </div>
@@ -27,10 +27,12 @@
     </div>
     <!-- END OF THE GRID -->
     <div class="server-container">
-        <div class="server-title" ng-hide="selected != null">
-            <h1>Select a server to see more information.</h1>
+        <div class="selected-server" id="selected-server">
+            <div class="server-title" ng-hide="selected != null">
+                <h1>Select a server to see more information.</h1>
+            </div>
         </div>
-        <div class="selected-server" id="selected-server" ng-show="selected != null">
+        <div class="selected-server" id="selected-server" ng-show="selected != null && showForm != true" >
             <div class="server-title">
                 <h1>Selected server: {{servers[selected].SERVER_NAME}}</h1>
             </div>
@@ -50,56 +52,24 @@
                         <span class="key">Docker status:</span>
                         <span class="value">{{servers[selected].DOCKER_STATUS}}</span><br />
                     </div>
-                    <!--
-                    <div class="column">
-                        <span class="key">Status:</span>
-                        <span class="value">Running</span><br />
-
-                        <span class="key">Memory use:</span>
-                        <span class="value">1.000.000 MB</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-                    </div>
+                    
+                    
                 </div>
             </div>
-
-            <div class="issue-side-column">
-                <div class="group">
-                    <div class="group-title">
-                        <span class="title">More info</span>
-                    </div>
-                    <div class="column">
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-                    </div>
-                </div>
-                <!--
-                <div class="group">
-                    <div class="group-title">
-                        <span class="title">More info</span>
-                    </div>
-                    <div class="column">
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-
-                        <span class="key">Key:</span>
-                        <span class="value">Value</span><br />
-                    </div>
-                </div>
-                -->
+          
+        </div>
+        <div class="selected-server" id="selected-server" ng-show="showForm == true" >
+            <h6 style="color: red;">
+                All the fields are required
+            </h6>
+            <div>
+                <input class="server-input" type="text" placeholder="Server name" ng-model="ser_name"/>
+                <input class="server-input" type="text" placeholder="Server IP address" ng-model="ser_ip"/>
+                <input class="server-input" type="text" placeholder="Docker status" ng-model="ser_doc_status"/>
+            </div>
+            <div>
+                <input class="form-button" type="submit" value="Add" ng-click="addServerToDB()"/>
+                <input class="form-button" type="submit" value="Cancel" ng-click="cancel()"/>
             </div>
         </div>
     </div>
