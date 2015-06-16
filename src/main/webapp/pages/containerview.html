@@ -73,7 +73,7 @@
                         <span class="key">Execute Driver</span>
                         <span class="value">{{containers[selected].ExecDriver}}</span><br />
                         
-                        <div class="button-holder">
+                        <div class="button-holder" ng-show="selected >= 0">
                             <a ng-click="executeTask('start', containers[selected].Id)" 
                                class="container-button green">
                                 Start

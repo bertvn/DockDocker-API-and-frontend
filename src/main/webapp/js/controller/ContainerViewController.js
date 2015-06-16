@@ -5,17 +5,35 @@
  */
 app.controller('ContainerViewController', function ($scope, Oboe) {
 
-    $scope.selected = null;
-    
-    $scope.setSelected = function(index){
+    $scope.selected = 0;
+
+    $scope.setSelected = function (index) {
         $scope.selected = index;
     };
-    
-    $scope.executeTask = function(What, Id){
-        console.log("here " + What + Id);
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "localhost:8084/API/containers/"+Id+"/"+What, false);
-        xhr.send();
+
+    $scope.executeTask = function (What, Id) {
+        Oboe({
+            url: "containers/" + Id + "/" + What,
+            pattern: '{Id}'
+        }).then(function () {
+            // Finished loading
+        }, function (error) {
+            // handle errors
+            console.log(error);
+        }, function (node) {
+            Oboe({
+                url: 'containerslist',
+                pattern: '{Id}'
+            }).then(function () {
+                // Finished loading
+            }, function (error) {
+                // handle errors
+                console.log(error);
+            }, function (node) {
+                // Node received
+                $scope.containers = (node);
+            });
+        });
     };
 
     $scope.containers = [];

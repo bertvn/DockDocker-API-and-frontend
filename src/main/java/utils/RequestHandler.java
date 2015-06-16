@@ -14,7 +14,7 @@ import utils.request.GetRequest;
 public class RequestHandler {
  
     public String getContainerList() {
-        GetRequest req = new GetRequest("http://localhost:4567", "/containerslist");
+        GetRequest req = new GetRequest("http://localhost:4000", "/containerslist");
         req.execute();        
         return req.getRespone();
     }
@@ -33,7 +33,7 @@ public class RequestHandler {
 
     public String ContainerManage(String id, String what) {
         if(what.equals("start") || what.equals("stop") || what.equals("restart")){
-            GetRequest req = new GetRequest("http://localhost:4567", "/containers/"+id+what);
+            GetRequest req = new GetRequest("http://localhost:4567", "/containers/"+id+"/"+what);
             req.execute();
             return req.getRespone();
         }
