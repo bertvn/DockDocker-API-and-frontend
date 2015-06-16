@@ -4,7 +4,7 @@
  * @created: 9-6-2015
  */
 
-var app = angular.module('DockDocker', ['ngRoute', 'ngOboe']);
+var app = angular.module('DockDocker', ['ngRoute', 'ngOboe', 'ngMaterial', 'ngAnimate']);
 
 app.controller('main', function ($scope) {
     $scope.menu = [

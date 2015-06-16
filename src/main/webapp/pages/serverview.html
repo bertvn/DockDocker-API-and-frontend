@@ -13,7 +13,6 @@
     <div class="server-grid" id="server-grid">
         <ul>
             <li ng-repeat="server in servers" ng-class="{selected : $index == selected}" ng-click="setSelected($index, server.ID)">
-                <!-- TODO: change to custom image per container (showing default) -->
                 <div class="positionLeft">
                     <img class="server-icon" src="images/server-icon.png" />
                 </div>

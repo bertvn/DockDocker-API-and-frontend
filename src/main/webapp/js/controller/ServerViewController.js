@@ -1,4 +1,4 @@
-app.controller('ServerViewController', function ($scope, Oboe, $http) {
+app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animate, $http) {
 
     $scope.selected = null;
     $scope.selectedsServerID = null;
@@ -10,7 +10,7 @@ app.controller('ServerViewController', function ($scope, Oboe, $http) {
     $scope.ser_doc_status = null;
 
     $scope.servers = [];
-    
+  
     $scope.setSelected = function (index, selectedID) {
         $scope.selected = index;
         $scope.selectedsServerID = selectedID;
@@ -18,10 +18,21 @@ app.controller('ServerViewController', function ($scope, Oboe, $http) {
 
     $scope.deleteServer = function () {
         if ($scope.selected == null) {
-            alert("Please select a server.")
+            $mdToast.show(
+                $mdToast.simple()
+                    .content('Server is not selected!')
+                    .position('top right')
+                    .hideDelay(3000)
+            );
         } else {
             $http.get("deleteServer/" + $scope.selectedsServerID).
                 success(function (response) {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .content('Server removed successfully!')
+                            .position('top right')
+                            .hideDelay(3000)
+                    );
                     $scope.servers = [];
                     callServerslist();
                 }).error(function () {
@@ -43,14 +54,24 @@ app.controller('ServerViewController', function ($scope, Oboe, $http) {
         if($scope.ser_name && $scope.ser_ip && $scope.ser_doc_status != null ){
             $http.get("addServer/" + $scope.ser_name + "/" + $scope.ser_ip + "/" + $scope.ser_doc_status).
                 success(function (response) {
-                    alert("The server is added into the database!");
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .content('Server successfully saved!')
+                            .position('top right')
+                            .hideDelay(3000)
+                    );
                     $scope.servers = [];
                     callServerslist();
                 }).error(function () {
                     console.log('error');
                 });
         } else {
-            alert("You have empty field!");
+            $mdToast.show(
+                $mdToast.simple()
+                    .content('You have empty fields!')
+                    .position('top right')
+                    .hideDelay(3000)
+            );
         }
     }
 
