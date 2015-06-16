@@ -275,11 +275,10 @@ div.log-view-holder div.log-log {
   div.log-view-holder div.log-log div.issue-main-column {
     width: 776px; }
     div.log-view-holder div.log-log div.issue-main-column div.log-data {
-      background-color: #696969;
       height: 500px;
-      widht: 500px;
-      overflow: hidden;
-      scrollable: true; }
+      width: 750px;
+      overflow-y: scroll;
+      padding-top: 5px; }
 
 img.server-icon {
   width: 50px;

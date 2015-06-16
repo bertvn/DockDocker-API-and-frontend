@@ -14,7 +14,7 @@ app.controller('ContainerViewController', function ($scope, Oboe) {
     $scope.execute = function(What, Id){
         console.log("here " + What + Id);
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "localhost:8084/API/"+Id+What, false);
+        xhr.open("GET", "localhost:8084/API/container/"+Id+What, false);
         xhr.send();
     };
 
