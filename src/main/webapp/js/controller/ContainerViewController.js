@@ -11,10 +11,10 @@ app.controller('ContainerViewController', function ($scope, Oboe) {
         $scope.selected = index;
     };
     
-    $scope.execute = function(What, Id){
+    $scope.executeTask = function(What, Id){
         console.log("here " + What + Id);
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "localhost:8084/API/container/"+Id+What, false);
+        xhr.open("GET", "localhost:8084/API/containers/"+Id+"/"+What, false);
         xhr.send();
     };
 

@@ -74,15 +74,15 @@
                         <span class="value">{{containers[selected].ExecDriver}}</span><br />
                         
                         <div class="button-holder">
-                            <a onclick="ContainerView.executeTask('start', {{containers[selected].Id}})" 
+                            <a ng-click="executeTask('start', containers[selected].Id)" 
                                class="container-button green">
                                 Start
                             </a>
-                            <a onclick="ContainerView.executeTask('stop', {{containers[selected].Id}})" 
+                            <a ng-click="executeTask('stop', containers[selected].Id)" 
                                class="container-button red">
                                 Stop
                             </a>
-                            <a onclick="ContainerView.executeTask('restart', {{containers[selected].Id}})" 
+                            <a ng-click="executeTask('restart', containers[selected].Id)" 
                                class="container-button yellow">
                                 Restart
                             </a>
