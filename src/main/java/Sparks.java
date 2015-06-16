@@ -18,21 +18,25 @@ public class Sparks implements spark.servlet.SparkApplication {
     
     @Override
     public void init() {
-        RequestHandler handler = new RequestHandler();
+        
 
         get("/containerslist", "application/json", (request, response) -> {
+            RequestHandler handler = new RequestHandler();
             return handler.getContainerList();
         });
         
-        get("/:id/:action", "application/json", (request, response) -> {
+        get("/container/:id/:action", "application/json", (request, response) -> {
+            RequestHandler handler = new RequestHandler();
             return handler.ContainerManage(request.params(":id"), request.params(":action"));
         });
         
         get("/loglist", "application/json", (request, response) -> {
+            RequestHandler handler = new RequestHandler();
             return handler.getLogList();
         });
         
         get("/read/:name", "application/json", (request, response) -> {
+            RequestHandler handler = new RequestHandler();
             return handler.getLogs(request.params(":name"));
         });
         
