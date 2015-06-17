@@ -14,6 +14,7 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     $scope.setSelected = function (index, selectedID) {
         $scope.selected = index;
         $scope.selectedsServerID = selectedID;
+        $scope.showForm = false;
     }
 
     $scope.deleteServer = function () {
@@ -54,14 +55,14 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
         if($scope.ser_name && $scope.ser_ip && $scope.ser_doc_status != null ){
             $http.get("addServer/" + $scope.ser_name + "/" + $scope.ser_ip + "/" + $scope.ser_doc_status).
                 success(function (response) {
+                    $scope.servers = [];
+                    callServerslist();
                     $mdToast.show(
                         $mdToast.simple()
                             .content('Server successfully saved!')
                             .position('top right')
                             .hideDelay(3000)
                     );
-                    $scope.servers = [];
-                    callServerslist();
                 }).error(function () {
                     console.log('error');
                 });
