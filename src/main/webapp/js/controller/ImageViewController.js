@@ -6,12 +6,49 @@
 app.controller('ImageViewController', function ($scope, Oboe) {
 
     $scope.selected = 0;
+    $scope.showForm = false;
+    
+    $scope.img_name = null;
+    $scope.selectedImage = null;
 
-    $scope.setSelected = function (index) {
+    $scope.setSelected = function (index, selectedId) {
         $scope.selected = index;
+        $scope.selectedImage = selectedId;
+        $scope.showForm = false;
     };
+    
+    $scope.addImage = function () {
+        $scope.showForm = true;
+    };
+    
+    $scope.deleteServer = function () {
+        if ($scope.selected == null) {
+            $mdToast.show(
+                $mdToast.simple()
+                    .content('Image is not selected!')
+                    .position('top right')
+                    .hideDelay(3000)
+            );
+        } else {
+            $http.get("/image/del/" + $scope.selectedsServerID).
+                success(function (response) {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .content('Image removed!')
+                            .position('top right')
+                            .hideDelay(3000)
+                    );
+                    $scope.images = [];
+                    callServerslist();
+                }).error(function () {
+                    console.log('error');
+                });
+        }
+    }
 
     $scope.images = [];
+    
+    var getImages = function () {
     Oboe({
         url: 'imagelist',
         pattern: '{Id}'
@@ -24,4 +61,7 @@ app.controller('ImageViewController', function ($scope, Oboe) {
         // Node received
         $scope.images.push(node);
     });
+    }
+    
+    getImages();
 });

@@ -2,8 +2,8 @@
 <div class="server-view-header">
     <!-- The space between the header and servers details box -->
     <div>
-        <input id="addImageBtn" class="greenBtn" type="submit" value="Add Image" ng-click="addServer()"/>
-        <input id="deleteImageBtn" class="redBtn" type="submit" value="Delete Image" ng-click="deleteServer()"/>
+        <input id="addImageBtn" class="greenBtn" type="submit" value="Add Image" ng-click="addImage()"/>
+        <input id="deleteImageBtn" class="redBtn" type="submit" value="Delete Image" ng-click="deleteImage()"/>
     </div>
 </div>
 
@@ -28,7 +28,7 @@
         </div>
         <div class="selected-server" id="selected-server" ng-show="selected != null && showForm != true" >
             <div class="server-title">
-                <h1>Selected Image: {{image[selected].RepoTags[0]}}</h1>
+                <h1>Selected Image: {{images[selected].RepoTags[0]}}</h1>
             </div>
             
             <div class="issue-main-column">
@@ -38,16 +38,16 @@
                     </div>
                     <div class="column">
                         <span class="key">Name:</span>
-                        <span class="value">{{image[selected].RepoTags[0]}}</span><br />
+                        <span class="value">{{images[selected].RepoTags[0]}}</span><br />
                         
                         <span class="key">ID:</span>
-                        <span class="value">{{image[selected].Id}}</span><br />
+                        <span class="value">{{images[selected].Id}}</span><br />
 
                         <span class="key">Size: </span>
-                        <span class="value">{{image[selected].Size}}</span><br />
+                        <span class="value">{{images[selected].Size}}</span><br />
 
                         <span class="key">Virtual Size:</span>
-                        <span class="value">{{image[selected].VirtualSize}}</span><br />
+                        <span class="value">{{images[selected].VirtualSize}}</span><br />
                     </div>
                 </div>
             </div>
@@ -58,9 +58,7 @@
                 Search new Image
             </h6>
             <div>
-                <input class="server-input" type="text" placeholder="Server name" ng-model="ser_name"/>
-                <input class="server-input" type="text" placeholder="Server IP address" ng-model="ser_ip"/>
-                <input class="server-input" type="text" placeholder="Docker status" ng-model="ser_doc_status"/>
+                <input class="server-input" type="text" placeholder="Image Name: " ng-model="img_name"/>
             </div>
             <div>
                 <input class="form-button" type="submit" value="Add" ng-click="addServerToDB()"/>

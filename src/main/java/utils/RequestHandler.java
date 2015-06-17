@@ -33,7 +33,7 @@ public class RequestHandler {
 
     public String ContainerManage(String id, String what) {
         if(what.equals("start") || what.equals("stop") || what.equals("restart")){
-            GetRequest req = new GetRequest("http://localhost:4567", "/containers/"+id+"/"+what);
+            GetRequest req = new GetRequest("http://localhost:4000", "/containers/"+id+"/"+what);
             req.execute();
             return req.getRespone();
         }
@@ -62,6 +62,12 @@ public class RequestHandler {
 
     public String getImageList() {
         GetRequest req = new GetRequest("http://localhost:4567", "/imagelist");
+        req.execute();
+        return req.getRespone();
+    }
+
+    public String delImage(String id) {
+        GetRequest req = new GetRequest("http://localhost:4567", "/image/del/"+id);
         req.execute();
         return req.getRespone();
     }

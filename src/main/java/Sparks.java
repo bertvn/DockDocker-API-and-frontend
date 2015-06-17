@@ -48,6 +48,10 @@ public class Sparks implements spark.servlet.SparkApplication {
             return handler.getImageList();
         });
         
+        get("/images/del/:name", "application/json", (request, response) -> {
+            return handler.delImage(request.params(":name"));
+        });
+        
         get("/read/:name", "application/json", (request, response) -> {
             return handler.getLogs(request.params(":name"));
         });

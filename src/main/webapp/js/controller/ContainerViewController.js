@@ -21,22 +21,17 @@ app.controller('ContainerViewController', function ($scope, Oboe) {
             // handle errors
             console.log(error);
         }, function (node) {
-            Oboe({
-                url: 'containerslist',
-                pattern: '{Id}'
-            }).then(function () {
-                // Finished loading
-            }, function (error) {
-                // handle errors
-                console.log(error);
-            }, function (node) {
-                // Node received
-                $scope.containers = (node);
-            });
         });
+        window.setTimeout(refresh(),10000);
+    };
+    
+    var refresh = function() {
+        $scope.containers = [];
+        getContainers();
     };
 
     $scope.containers = [];
+    var getContainers = function() {
     Oboe({
         url: 'containerslist',
         pattern: '{Id}'
@@ -49,4 +44,6 @@ app.controller('ContainerViewController', function ($scope, Oboe) {
         // Node received
         $scope.containers.push(node);
     });
+    };
+    getContainers();
 });
