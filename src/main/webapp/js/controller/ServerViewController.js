@@ -5,9 +5,9 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     $scope.showForm = false;
     
     //Input value
-    $scope.ser_name = null;
-    $scope.ser_ip = null;
-    $scope.ser_doc_status = null;
+    $scope.ser_name = "";
+    $scope.ser_ip = "";
+    $scope.ser_doc_status = "";
 
     $scope.servers = [];
   
@@ -34,6 +34,7 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
                             .position('top right')
                             .hideDelay(3000)
                     );
+                    $scope.selected = null;
                     $scope.servers = [];
                     callServerslist();
                 }).error(function () {
@@ -44,6 +45,9 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     
     $scope.addServer = function () {
         $scope.showForm = true;
+        $scope.ser_name = "";
+        $scope.ser_ip = "";
+        $scope.ser_doc_status = "";
     }
     
     $scope.cancel = function() {
@@ -53,7 +57,11 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     $scope.addServerToDB = function () {
         //Check if all field are inserted
         if($scope.ser_name && $scope.ser_ip && $scope.ser_doc_status != null ){
-            $http.get("addServer/" + $scope.ser_name + "/" + $scope.ser_ip + "/" + $scope.ser_doc_status).
+            var new_name = $scope.ser_name.replace(", ", "{comma}").replace("/", "{slash}");
+            var new_ip = $scope.ser_ip.replace(", ", "{comma}").replace("/", "{slash}");
+            var new_status = $scope.ser_doc_status.replace(", ", "{comma}").replace("/", "{slash}");
+            
+            $http.get("addServer/" + new_name + "/" + new_ip + "/" + new_status).
                 success(function (response) {
                     $scope.servers = [];
                     callServerslist();
