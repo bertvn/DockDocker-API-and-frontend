@@ -42,18 +42,16 @@ div.header {
     height: 40px;
     width: 124px; }
 
-div.page {
-  height: 100%; }
-  div.page div.menu {
-    float: left;
-    min-height: 500px;
-    width: 13.9%; }
-  div.page div.view-area {
-    border-bottom: 1px solid #cccccc;
-    border-left: 1px solid #cccccc;
-    float: left;
-    min-height: 500px;
-    width: 82%; }
+div.page div.menu {
+  float: left;
+  min-height: 500px;
+  width: 13.9%; }
+div.page div.view-area {
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  float: left;
+  min-height: 500px;
+  width: 82%; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -326,7 +324,7 @@ div.server-view-holder div.server-grid {
   float: left;
   min-height: 750px;
   max-height: 750px;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 3px 8px 8px 8px;
   width: 300px; }
   div.server-view-holder div.server-grid img.server-icon {
