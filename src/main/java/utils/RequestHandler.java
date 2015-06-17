@@ -59,4 +59,10 @@ public class RequestHandler {
         req.execute();
         return req.getRespone();
     }
+
+    public String getImageList() {
+        GetRequest req = new GetRequest("http://localhost:4567", "/imagelist");
+        req.execute();
+        return req.getRespone();
+    }
 }
