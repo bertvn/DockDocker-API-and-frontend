@@ -13,6 +13,10 @@ app.controller('main', function ($scope) {
             display: false,
             link:   "/API/#/servers"
         },{
+            titel: "Images",
+            display: false,
+            link:   "/API/#/images"
+        },{
             titel: "Containers",
             display: false,
             link:   "/API/#/containers"
@@ -31,6 +35,7 @@ app.controller('main', function ($scope) {
 app.config(function ($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'pages/serverview.html', controller: 'ContainerViewController'})
     .when('/servers', {templateUrl: 'pages/serverview.html', controller: 'ServerViewController'})
+    .when('/images', {templateUrl: 'pages/imageview.html', controller: 'ImageViewController'})
     .when('/containers', {templateUrl: 'pages/containerview.html', controller: 'ContainerViewController'})
     .when('/logbook', {templateUrl: 'pages/logview.html', controller: 'LogViewController'})
     .otherwise({redirectTo: '/'});
