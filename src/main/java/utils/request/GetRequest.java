@@ -39,26 +39,24 @@ public class GetRequest extends Request {
             con.setRequestMethod("GET");            
             int responseCode = con.getResponseCode();
             
-            /*
-             * TODO: add check
-             * IF response code == ##
-             *   do something
-             * ELSE 
-             *   do something else
-             *
-             */
-            
-            // Read response
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer responseReader = new StringBuffer();
-            while ((inputLine = in.readLine()) != null) {
-                responseReader.append(inputLine);
+            // If status OK
+            if(responseCode == 200) {
+                 // Read response
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuffer responseReader = new StringBuffer();
+                while ((inputLine = in.readLine()) != null) {
+                    responseReader.append(inputLine);
+                }
+                in.close();
+                
+                // Set response
+                response = responseReader.toString();
+            } else if(responseCode == 404) {
+                response = "Error 404: docker remote api not found";
+            } else {
+                response = "Unable to send request to docker remote Api";
             }
-            in.close();
-            
-            // Set response
-            response = responseReader.toString();
         } catch (MalformedURLException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
