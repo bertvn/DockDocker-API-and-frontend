@@ -14,7 +14,7 @@ import utils.request.GetRequest;
 public class RequestHandler {
  
     public String getContainerList() {
-        GetRequest req = new GetRequest("http://localhost:4000", "/containerslist");
+        GetRequest req = new GetRequest("http://localhost:4567", "/containerslist");
         req.execute();        
         return req.getRespone();
     }
