@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 18, 2015, 5:13:09 PM
+    Author     : Patrick
+*/
+div.overlay {
+    background: black;
+    display: none;
+    height:100%;
+    opacity: .5;
+    position: fixed;
+    width: 100%;
+}
+
+div.popup {
+    //display: none;
+    left: 50%;
+    position: absolute;
+    
+    div.inner {
+        border: 1px solid $border-color;
+        background: $white-color;
+        border-radius: 6px;
+        left: -50%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    div.title {
+        border-bottom: 1px solid $border-color;
+        background: $light-gray-color;
+        padding: 16px;
+    }
+    
+    div.form {
+        padding: 16px;
+        
+        div.form-row {
+            padding: 6px 0;
+            width: 650px;
+            
+            label,
+            input,
+            select {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        
+            label {
+                text-align: right;
+                margin: 0 16px 0 0;
+                vertical-align: top;
+                width: 140px;
+            }
+            
+            input,
+            textarea {
+                width: 400px;
+            }
+            
+            textarea {
+                height: 110px;
+                resize: vertical;
+            }
+            
+            select,
+            input[type=file] {
+                width: 280px;
+            }
+        }
+        
+        div.form-row.is-hidden {
+            display: none;
+        }
+        
+        div.form-row.divider {
+            border-bottom: 1px solid $border-color;
+            margin: 0 0 12px 0;
+            padding: 6px 0 18px 0;
+        }
+    }
+    
+    div.footer {
+        border-top: 1px solid $border-color;
+        background: $light-gray-color;
+        padding: 16px;
+        
+        div.buttons {
+            float: right;
+            
+            div.default-action {
+                display: inline-block;
+                margin: 0 16px 0 0;
+            }
+        }
+    }
+}
+

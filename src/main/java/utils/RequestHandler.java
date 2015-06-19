@@ -71,4 +71,10 @@ public class RequestHandler {
         req.execute();
         return req.getRespone();
     }
+    
+    public String searchImage(String name) {
+        GetRequest req = new GetRequest("http://localhost:4567", "/searchimage/"+name);
+        req.execute();
+        return req.getRespone();
+    }
 }

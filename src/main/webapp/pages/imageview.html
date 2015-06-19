@@ -67,3 +67,45 @@
         </div>
     </div>
 </div>
+
+<div class="popup add-image" ng-show="showPopUp == true">
+    <div class="inner">
+        <div class="title">
+            <h2>Search for image</h2>
+        </div>
+        <form id="search-image-form">
+            <div class="form">
+                <div class="form-row">
+                    Search for images by name
+                </div>
+                <div class="form-row">
+                    <input id="name" type="text" name="keywords" placeholder="name..."/>
+                </div>
+            </div>
+            <div class="results">
+                <div class="results-header">
+                    <div class="name">
+                        Image name
+                    </div>
+                </div>
+                <div class="result-row" ng-show="searchresults.length == 0 || searchresults == undefined">
+                    No results found
+                </div>
+                <div class="result-row" ng-repeat="searchresult in searchresults">
+                    {{searchresult.name}}
+                </div>
+            </div>
+            
+            <div class="footer clearfix">
+                <div class="buttons clearfix">
+                    <!-- place holder for submit button, so that ENTER can be pressed to submit the form -->
+                    <input type="submit" style="visibility: hidden;" />
+                    <div id="add-container" class="default-action"
+                         ng-class="searchresults.length == 0 || searchresults == undefined ? 'disabled' : ''">
+                        Add container
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

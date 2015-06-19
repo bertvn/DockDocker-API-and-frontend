@@ -9,6 +9,10 @@ and open the template in the editor.
 */
 
 // Contants
+// Font
+$font: Arial, sans-serif;
+
+// Colors
 $main-color: #333;
 $border-color: #cccccc;
 $blue-color: #3572b0;
@@ -25,8 +29,12 @@ $selected-color: #ebf2f9;
 @import "_base.scss";
 @import "_menu.scss";
 @import "_buttons.scss";
+@import "_forms.scss";
+@import "_popup.scss";
 
     // Pages
     @import "_container-view.scss"; 
     @import "_log-view.scss";
     @import "_server-view.scss";
+    @import "_image-view.scss";
+    

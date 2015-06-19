@@ -21,11 +21,20 @@ a:hover {
     background: $blue-color;
     border: 1px solid $border-color;
     border-radius: 5px;
-    color: $white-color;    
+    color: $white-color;
+    cursor: pointer;
+    line-height: 25px;
+    padding: 0 10px;
 }
 
 .default-action:hover {
     background: $dark-blue-color;
+}
+
+.default-action.disabled {
+    background: $light-gray-color;
+    color: $main-color;
+    cursor: default;
 }
 
 .container-button {

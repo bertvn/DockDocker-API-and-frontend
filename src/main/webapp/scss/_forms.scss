@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 18, 2015, 5:07:16 PM
+    Author     : Patrick
+*/
+input[type=text],
+input[type=file],
+input[type=password],
+select,
+textarea {
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background: $white-color;
+    color: $main-color;
+    font-family: $font;
+    font-size: 14px;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 6px;
+}
+
+select {
+    padding: 0 2px;
+}
+
+textarea {
+    line-height: 16px;
+    padding: 6px;
+}
+
+label {
+    line-height: 30px;
+}
+
+input[type=text]:disabled,
+input[type=file]:disabled,
+input[type=password]:disabled,
+select:disabled,
+textarea:disabled {
+    background: $light-gray-color;
+}

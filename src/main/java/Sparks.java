@@ -55,6 +55,10 @@ public class Sparks implements spark.servlet.SparkApplication {
         get("/read/:name", "application/json", (request, response) -> {
             return handler.getLogs(request.params(":name"));
         });
+        
+        get("/searchimage/:name", "application/json", (request, response) -> {
+            return handler.searchImage(request.params(":name"));
+        });
 
     }
 }

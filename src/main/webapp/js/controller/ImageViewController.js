@@ -3,6 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ImageViewController = {
+    
+    addImage: function() {
+        console.log('pressed');
+        $scope.showPopUp = true;
+    }
+    
+}
+
 app.controller('ImageViewController', function ($scope, Oboe) {
 
     $scope.selected = 0;
@@ -18,7 +27,8 @@ app.controller('ImageViewController', function ($scope, Oboe) {
     };
     
     $scope.addImage = function () {
-        $scope.showForm = true;
+        $scope.showPopUp = true;
+        $("#overlay").show();
     };
     
     $scope.deleteServer = function () {
@@ -62,6 +72,27 @@ app.controller('ImageViewController', function ($scope, Oboe) {
         $scope.images.push(node);
     });
     }
+    
+    $("#search-image-form").submit(function () {
+        var name = $("input#name").val();
+        $scope.searchresults = [];
+        
+        Oboe({
+            url: 'searchimage/'+name,
+            pattern: '{name}'
+        }).then(function () {
+            // Finished loading
+        }, function (error) {
+            // handle errors
+            console.log(error);
+        }, function (node) {
+            // Node received
+            console.log(node);
+            $scope.searchresults.push(node);
+        });
+        // Stop the browser from reloading the page
+        return false;
+    });
     
     getImages();
 });
