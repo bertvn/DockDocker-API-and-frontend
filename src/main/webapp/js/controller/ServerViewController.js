@@ -10,6 +10,7 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     $scope.ser_name = "";
     $scope.ser_ip = "";
     $scope.ser_doc_status = "";
+    $scope.searchText = "";
 
     $scope.servers = [];
   
