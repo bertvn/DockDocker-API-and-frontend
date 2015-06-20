@@ -5,6 +5,8 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     $scope.showForm = false;
     
     //Input value
+    $scope.ser_username = "";
+    $scope.ser_password = "";
     $scope.ser_name = "";
     $scope.ser_ip = "";
     $scope.ser_doc_status = "";
@@ -45,6 +47,8 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     
     $scope.addServer = function () {
         $scope.showForm = true;
+        $scope.ser_username = "";
+        $scope.ser_password = "";
         $scope.ser_name = "";
         $scope.ser_ip = "";
         $scope.ser_doc_status = "";
@@ -56,12 +60,19 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     
     $scope.addServerToDB = function () {
         //Check if all field are inserted
-        if($scope.ser_name && $scope.ser_ip && $scope.ser_doc_status != null ){
+        if($scope.ser_username && $scope.ser_password && $scope.ser_name && $scope.ser_ip && $scope.ser_doc_status != null ){
+            var new_username = $scope.ser_username.replace(", ", "{comma}").replace("/", "{slash}");
+            var new_password = $scope.ser_password.replace(", ", "{comma}").replace("/", "{slash}");
             var new_name = $scope.ser_name.replace(", ", "{comma}").replace("/", "{slash}");
             var new_ip = $scope.ser_ip.replace(", ", "{comma}").replace("/", "{slash}");
             var new_status = $scope.ser_doc_status.replace(", ", "{comma}").replace("/", "{slash}");
             
-            $http.get("addServer/" + new_name + "/" + new_ip + "/" + new_status).
+            $http.get("addServer/" + 
+                    new_username + "/"  + 
+                    new_password + "/" + 
+                    new_name + "/" + 
+                    new_ip + "/" + 
+                    new_status).
                 success(function (response) {
                     $scope.servers = [];
                     callServerslist();
@@ -71,8 +82,8 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
                             .position('top right')
                             .hideDelay(3000)
                     );
-                }).error(function () {
-                    console.log('error');
+                }).error(function (response) {
+                    console.log(response);
                 });
         } else {
             $mdToast.show(
@@ -101,4 +112,3 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     
     callServerslist();
 });
-

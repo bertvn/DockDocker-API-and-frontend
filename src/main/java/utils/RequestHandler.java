@@ -43,19 +43,19 @@ public class RequestHandler {
     }
 
     public String getServerList() {
-        GetRequest req = new GetRequest("http://localhost:4567", "/servers");
+        GetRequest req = new GetRequest("http://localhost:4567", "/s_servers");
         req.execute();
         return req.getRespone();
     }
     
     public String deteleServerFromList(String id) {
-        GetRequest req = new GetRequest("http://localhost:4567", "/deleteServer/" + id);
+        GetRequest req = new GetRequest("http://localhost:4567", "/s_deleteServer/" + id);
         req.execute();
         return req.getRespone();
     }
     
-    public String addServerToList(String server_name, String server_ip, String docker_status) {
-        GetRequest req = new GetRequest("http://localhost:4567", "/addServer/" +server_name+ "/" +server_ip+ "/" + docker_status);
+    public String addServerToList(String username, String password, String server_name, String server_ip, String docker_status) {
+        GetRequest req = new GetRequest("http://localhost:4567", "/s_addServer/" +username+ "/" +password+ "/" +server_name+ "/" +server_ip+ "/" + docker_status);
         req.execute();
         return req.getRespone();
     }

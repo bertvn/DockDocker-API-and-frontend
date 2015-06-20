@@ -32,8 +32,13 @@ public class Sparks implements spark.servlet.SparkApplication {
             return handler.deteleServerFromList(request.params(":id"));
         });
         
-        get("/addServer/:serverName/:serverIp/:dockerStatus", "application/json", (request, response) -> {
-            return handler.addServerToList(request.params(":serverName"), request.params(":serverIp"), request.params(":dockerStatus"));
+        get("/addServer/:username/:password/:serverName/:serverIp/:dockerStatus", "application/json", (request, response) -> {
+            return handler.addServerToList(
+                    request.params(":username"), 
+                    request.params(":password"), 
+                    request.params(":serverName"), 
+                    request.params(":serverIp"), 
+                    request.params(":dockerStatus"));
         });
         
         get("/containers/:id/:action", "application/json", (request, response) -> {
