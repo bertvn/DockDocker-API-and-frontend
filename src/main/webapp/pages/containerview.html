@@ -1,8 +1,8 @@
 
 <div class="container-view-header">
     <div>
-        <input id="addServerBtn" class="greenBtn" type="submit" value="Add server" ng-click="addServer()"/>
-        <input id="deleteServenBtn" class="redBtn" type="submit" value="Delete server" ng-click="deleteServer()"/>
+        <input id="addContainerBtn" class="greenBtn" type="submit" value="Add Container" ng-click="addContainer()"/>
+        <input id="deleteContainerBtn" class="redBtn" type="submit" value="Delete Container" ng-click="deleteServer()"/>
     </div>
 </div>
 
@@ -23,10 +23,10 @@
     </div>
     <div class="container-container">
         <div class="selected-container" id="selected-container">
-            <div class="container-title">
+            <div class="container-title" ng-show="selected != null && showForm != true">
                 <h1>Selected container title</h1>
             </div>
-            <div class="issue-main-column">
+            <div class="issue-main-column" ng-show="selected != null && showForm != true">
                 <div class="group">
                     <div class="group-title">
                         <span class="title">Details</span>
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="issue-side-column">
+            <div class="issue-side-column" ng-show="selected != null && showForm != true">
                 <div class="group">
                     <div class="group-title">
                         <span class="title">Size</span>
@@ -131,19 +131,18 @@
                 </div>
             </div>
         </div>
-        <div class="selected-server" id="selected-server" ng-show="showForm == true" >
+        <div class="selected-container" id="selected-container" ng-show="showForm == true" >
             <h6 style="color: red;">
                 All the fields are required
             </h6>
             <div>
-                <input class="server-input" type="text" placeholder="Server username" ng-model="ser_username"/>
-                <input class="server-input" type="text" placeholder="Server password" ng-model="ser_password"/>
-                <input class="server-input" type="text" placeholder="Server name" ng-model="ser_name"/>
-                <input class="server-input" type="text" placeholder="Server IP address" ng-model="ser_ip"/>
-                <input class="server-input" type="text" placeholder="Docker status" ng-model="ser_doc_status"/>
+                <input class="container-input" type="text" placeholder="Server" ng-model="ser_username"/>
+                <input class="container-input" type="text" placeholder="Container name" ng-model="ser_password"/>
+                <input class="container-input" type="text" placeholder="Image" ng-model="ser_name"/>
+                <input class="container-input" type="text" placeholder="port" ng-model="ser_ip"/>
             </div>
             <div>
-                <input class="form-button" type="submit" value="Add" ng-click="addServerToDB()"/>
+                <input class="form-button" type="submit" value="Add" ng-click="addcontainer()"/>
                 <input class="form-button" type="submit" value="Cancel" ng-click="cancel()"/>
             </div>
         </div>
