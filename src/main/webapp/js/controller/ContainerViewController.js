@@ -32,6 +32,11 @@ app.controller('ContainerViewController', function ($scope, Oboe) {
         $scope.containers = [];
         getContainers();
     };
+    
+    $scope.addContainer = function () {
+        $scope.showForm = true;
+        $scope.selected = null;
+    }
 
     $scope.containers = [];
     var getContainers = function() {
