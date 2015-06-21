@@ -10,7 +10,7 @@
 <div class="server-view-holder">
     <!-- Grid -->
     <div class="server-grid" id="server-grid">
-        <input class="server-search" type="text" placeholder="Search server" ng-model="searchText" style="width: 95%; height: 40px;"/>
+        <input class="server-search" type="text" placeholder="Search server" ng-model="searchText"/>
         <ul>
             <li ng-repeat="server in servers | filter:searchText" ng-class="{selected : $index == selected}" ng-click="setSelected($index, server.ID)">
                 <div class="positionLeft">

@@ -447,6 +447,9 @@ div.server-view-holder div.server-grid {
   overflow-y: auto;
   padding: 3px 8px 8px 8px;
   width: 300px; }
+  div.server-view-holder div.server-grid input.server-search {
+    width: 97%;
+    height: 40px; }
   div.server-view-holder div.server-grid img.server-icon {
     width: 50px;
     height: 50px; }
