@@ -259,6 +259,30 @@ div.container-view-header {
   height: 40px;
   padding: 8px;
   width: 100%; }
+  div.container-view-header input.greenBtn {
+    background-color: #BEE35F;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid white;
+    color: white; }
+  div.container-view-header input.redBtn {
+    background-color: #F299AC;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid white;
+    color: white; }
+  div.container-view-header input.greenBtn:hover {
+    background-color: #BEE35F;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid #3572b0;
+    color: #3572b0; }
+  div.container-view-header input.redBtn:hover {
+    background-color: #F299AC;
+    padding: 10px;
+    border: none;
+    border-bottom: 4px solid #3572b0;
+    color: #3572b0; }
 
 div.container-view-holder div.container-grid {
   background: #FFFFFF;

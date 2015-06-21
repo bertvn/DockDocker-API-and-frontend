@@ -6,9 +6,12 @@
 app.controller('ContainerViewController', function ($scope, Oboe) {
 
     $scope.selected = 0;
+    $scope.showForm = false;
 
-    $scope.setSelected = function (index) {
+    $scope.setSelected = function (index, selectedID) {
         $scope.selected = index;
+        $scope.selectedsServerID = selectedID;
+        $scope.showForm = false;
     };
 
     $scope.executeTask = function (What, Id) {
