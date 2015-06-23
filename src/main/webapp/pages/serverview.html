@@ -3,6 +3,7 @@
     <div>
         <input id="addServerBtn" class="greenBtn" type="submit" value="Add server" ng-click="addServer()"/>
         <input id="deleteServenBtn" class="redBtn" type="submit" value="Delete server" ng-click="deleteServer()"/>
+        <input id="pingServersBtn" class="blueBtn" type="submit" value="Ping servers" ng-click="ping()"/>
     </div>
 </div>
 
@@ -12,7 +13,7 @@
     <div class="server-grid" id="server-grid">
         <input class="server-search" type="text" placeholder="Search server" ng-model="searchText"/>
         <ul>
-            <li ng-repeat="server in servers | filter:searchText" ng-class="{selected : $index == selected}" ng-click="setSelected($index, server.ID)">
+            <li ng-repeat="server in servers | filter:searchText" ng-class="{selected : $index == selected, 'connectedClass': server.status == 'connected', 'disconnectedClass': server.status == 'disconnected'}" ng-click="setSelected($index, server.ID)" >
                 <div class="positionLeft">
                     <img class="server-icon" src="images/server-icon.png" />
                 </div>
@@ -42,6 +43,9 @@
                         <span class="title">Details</span>
                     </div>
                     <div class="column">
+                        <span class="key">Status:</span>
+                        <span class="value">{{servers[selected].status}}</span><br />
+                        
                         <span class="key">Name:</span>
                         <span class="value">{{servers[selected].SERVER_NAME}}</span><br />
 

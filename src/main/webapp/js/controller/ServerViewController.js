@@ -1,5 +1,5 @@
-app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animate, $http) {
-
+app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animate, $http, netTesting) {
+    
     $scope.selected = null;
     $scope.selectedsServerID = null;
     $scope.showForm = false;
@@ -11,14 +11,14 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     $scope.ser_ip = "";
     $scope.ser_doc_status = "";
     $scope.searchText = "";
-
+    
     $scope.servers = [];
   
     $scope.setSelected = function (index, selectedID) {
         $scope.selected = index;
         $scope.selectedsServerID = selectedID;
         $scope.showForm = false;
-    }
+    };
 
     $scope.deleteServer = function () {
         if ($scope.selected == null) {
@@ -44,7 +44,7 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
                     console.log('error');
                 });
         }
-    }
+    };
     
     $scope.addServer = function () {
         $scope.showForm = true;
@@ -53,11 +53,11 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
         $scope.ser_name = "";
         $scope.ser_ip = "";
         $scope.ser_doc_status = "";
-    }
+    };
     
     $scope.cancel = function() {
         $scope.showForm = false;
-    }
+    };
     
     $scope.addServerToDB = function () {
         //Check if all field are inserted
@@ -94,8 +94,17 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
                     .hideDelay(3000)
             );
         }
-    }
+    };
 
+    $scope.ping = function() {
+        angular.forEach($scope.servers, function(obj){
+            var ip = obj.SERVER_IP.replace(/(, ).*/, "");
+            netTesting.ping(ip,function(){
+                obj.status = arguments[1];
+            });
+        });
+    };
+    
     var callServerslist = function () {
         Oboe({
             url: 'serverslist',
@@ -109,6 +118,7 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
             // Node received
             $scope.servers.push(node);
         });
+        
     };
     
     callServerslist();
