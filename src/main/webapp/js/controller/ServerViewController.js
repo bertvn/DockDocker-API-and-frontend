@@ -13,7 +13,7 @@ app.controller('ServerViewController', function ($scope, Oboe, $mdToast, $animat
     $scope.searchText = "";
     
     $scope.servers = [];
-  
+
     $scope.setSelected = function (index, selectedID) {
         $scope.selected = index;
         $scope.selectedsServerID = selectedID;
